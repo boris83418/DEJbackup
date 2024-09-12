@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Quotation</title>
+</head>
+<body>
+    <h1>Quotation System</h1>
+    <form method="POST" action="/">
+        <label for="ProductID">Product ID:</label>
+        <input type="text" id="ProductID" name="ProductID">
+        <button type="submit">Search</button>
+    </form>
+
+    <!-- 新增查詢結果顯示區域 -->
+    <h2>Query Result</h2>
+    <ul>
+        {% for result in query_result %}
+        <li>
+            {{ result.ProductName }} - {{ result.UnitPrice }}
+            <form method="POST" action="/add" style="display:inline;">
+                <input type="hidden" name="ProductName" value="{{ result.ProductName }}">
+                <input type="hidden" name="UnitPrice" value="{{ result.UnitPrice }}">
+                <input type="hidden" name="UnitQuantity" value="{{ result.UnitQuantity }}">
+                <button type="submit">Add</button>
+            </form>
+        </li>
+        {% endfor %}
+    </ul>
+
+    <h2>Added Products</h2>
+    <table border="1">
+        <tr>
+            <th>Product Name</th>
+            <th>Unit Price</th>
+            <th>Unit Quantity</th>
+            <th>Unit Total price</th>
+            <th>Action</th>
+        </tr>
+        {% for data in added_data %}
+        <tr>
+            <td>{{ data.ProductName }}</td>
+            <td>{{ data.UnitPrice }}</td>
+            <td>{{ data.UnitQuantity }}</td>
+            <td>{{ data.UnitTotalPrice }}</td>
+            <td>
+                <form method="POST" action="/delete" style="display:inline;">
+                    <input type="hidden" name="ProductName" value="{{ data.ProductName }}">
+                    <button type="submit">Delete</button>
+                </form>
+            </td>
+        </tr>
+        {% endfor %}
+    </table>
+
+</body>
+</html>
+

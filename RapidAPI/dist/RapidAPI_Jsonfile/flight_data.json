@@ -1,0 +1,485 @@
+{
+    "data": {
+        "context": {
+            "status": "incomplete",
+            "sessionId": "ClQIARJQCk4KJDE2OGMzMGZjLTk1OTEtNDM2MC1iMjE2LTQ0MDYyOTljZjEwMhACGiQzZTc4Y2JkZC00NTg3LTRkODEtYTI0Yi1mZWNiZDY1NGNkOGESKHVzc180NzZkNGU0OS0zMDdmLTQyNTAtOGI0YS01NzBkNWE1NDBmOTg=",
+            "totalResults": 10,
+            "filterTotalResults": 2
+        },
+        "itineraries": [
+            {
+                "id": "17075-2409132025--31974-0-12234-2409140045|12234-2409170555--31974-0-17075-2409170835",
+                "price": {
+                    "raw": 18632.54,
+                    "formatted": "NT$18,633",
+                    "pricingOptionId": "qU0TIgQkwsvG"
+                },
+                "legs": [
+                    {
+                        "id": "17075-2409132025--31974-0-12234-2409140045",
+                        "origin": {
+                            "id": "TPE",
+                            "entityId": "128667054",
+                            "name": "Taipei Taiwan Taoyuan",
+                            "displayCode": "TPE",
+                            "city": "Taipei",
+                            "country": "Taiwan",
+                            "isHighlighted": false
+                        },
+                        "destination": {
+                            "id": "HND",
+                            "entityId": "128667143",
+                            "name": "Tokyo Haneda",
+                            "displayCode": "HND",
+                            "city": "Tokyo",
+                            "country": "Japan",
+                            "isHighlighted": false
+                        },
+                        "durationInMinutes": 200,
+                        "stopCount": 0,
+                        "isSmallestStops": false,
+                        "departure": "2024-09-13T20:25:00",
+                        "arrival": "2024-09-14T00:45:00",
+                        "timeDeltaInDays": 1,
+                        "carriers": {
+                            "marketing": [
+                                {
+                                    "id": -31974,
+                                    "logoUrl": "https://logos.skyscnr.com/images/airlines/favicon/03.png",
+                                    "name": "Peach"
+                                }
+                            ],
+                            "operationType": "fully_operated"
+                        },
+                        "segments": [
+                            {
+                                "id": "17075-12234-2409132025-2409140045--31974",
+                                "origin": {
+                                    "flightPlaceId": "TPE",
+                                    "displayCode": "TPE",
+                                    "parent": {
+                                        "flightPlaceId": "TPET",
+                                        "displayCode": "TPE",
+                                        "name": "Taipei",
+                                        "type": "City"
+                                    },
+                                    "name": "Taipei Taiwan Taoyuan",
+                                    "type": "Airport",
+                                    "country": "Taiwan"
+                                },
+                                "destination": {
+                                    "flightPlaceId": "HND",
+                                    "displayCode": "HND",
+                                    "parent": {
+                                        "flightPlaceId": "TYOA",
+                                        "displayCode": "TYO",
+                                        "name": "Tokyo",
+                                        "type": "City"
+                                    },
+                                    "name": "Tokyo Haneda",
+                                    "type": "Airport",
+                                    "country": "Japan"
+                                },
+                                "departure": "2024-09-13T20:25:00",
+                                "arrival": "2024-09-14T00:45:00",
+                                "durationInMinutes": 200,
+                                "flightNumber": "860",
+                                "marketingCarrier": {
+                                    "id": -31974,
+                                    "name": "Peach",
+                                    "alternateId": "03",
+                                    "allianceId": 0,
+                                    "displayCode": ""
+                                },
+                                "operatingCarrier": {
+                                    "id": -31974,
+                                    "name": "Peach",
+                                    "alternateId": "03",
+                                    "allianceId": 0,
+                                    "displayCode": ""
+                                }
+                            }
+                        ]
+                    },
+                    {
+                        "id": "12234-2409170555--31974-0-17075-2409170835",
+                        "origin": {
+                            "id": "HND",
+                            "entityId": "128667143",
+                            "name": "Tokyo Haneda",
+                            "displayCode": "HND",
+                            "city": "Tokyo",
+                            "country": "Japan",
+                            "isHighlighted": false
+                        },
+                        "destination": {
+                            "id": "TPE",
+                            "entityId": "128667054",
+                            "name": "Taipei Taiwan Taoyuan",
+                            "displayCode": "TPE",
+                            "city": "Taipei",
+                            "country": "Taiwan",
+                            "isHighlighted": false
+                        },
+                        "durationInMinutes": 220,
+                        "stopCount": 0,
+                        "isSmallestStops": false,
+                        "departure": "2024-09-17T05:55:00",
+                        "arrival": "2024-09-17T08:35:00",
+                        "timeDeltaInDays": 0,
+                        "carriers": {
+                            "marketing": [
+                                {
+                                    "id": -31974,
+                                    "logoUrl": "https://logos.skyscnr.com/images/airlines/favicon/03.png",
+                                    "name": "Peach"
+                                }
+                            ],
+                            "operationType": "fully_operated"
+                        },
+                        "segments": [
+                            {
+                                "id": "12234-17075-2409170555-2409170835--31974",
+                                "origin": {
+                                    "flightPlaceId": "HND",
+                                    "displayCode": "HND",
+                                    "parent": {
+                                        "flightPlaceId": "TYOA",
+                                        "displayCode": "TYO",
+                                        "name": "Tokyo",
+                                        "type": "City"
+                                    },
+                                    "name": "Tokyo Haneda",
+                                    "type": "Airport",
+                                    "country": "Japan"
+                                },
+                                "destination": {
+                                    "flightPlaceId": "TPE",
+                                    "displayCode": "TPE",
+                                    "parent": {
+                                        "flightPlaceId": "TPET",
+                                        "displayCode": "TPE",
+                                        "name": "Taipei",
+                                        "type": "City"
+                                    },
+                                    "name": "Taipei Taiwan Taoyuan",
+                                    "type": "Airport",
+                                    "country": "Taiwan"
+                                },
+                                "departure": "2024-09-17T05:55:00",
+                                "arrival": "2024-09-17T08:35:00",
+                                "durationInMinutes": 220,
+                                "flightNumber": "859",
+                                "marketingCarrier": {
+                                    "id": -31974,
+                                    "name": "Peach",
+                                    "alternateId": "03",
+                                    "allianceId": 0,
+                                    "displayCode": ""
+                                },
+                                "operatingCarrier": {
+                                    "id": -31974,
+                                    "name": "Peach",
+                                    "alternateId": "03",
+                                    "allianceId": 0,
+                                    "displayCode": ""
+                                }
+                            }
+                        ]
+                    }
+                ],
+                "isSelfTransfer": false,
+                "isProtectedSelfTransfer": false,
+                "farePolicy": {
+                    "isChangeAllowed": false,
+                    "isPartiallyChangeable": false,
+                    "isCancellationAllowed": false,
+                    "isPartiallyRefundable": false
+                },
+                "eco": {
+                    "ecoContenderDelta": 25.914764
+                },
+                "fareAttributes": {},
+                "tags": [
+                    "second_cheapest",
+                    "second_shortest"
+                ],
+                "isMashUp": false,
+                "hasFlexibleOptions": false,
+                "score": 0.999
+            },
+            {
+                "id": "17075-2409132025--31974-0-12234-2409140045|12234-2409170525--31444-0-17075-2409170800",
+                "price": {
+                    "raw": 18425.54,
+                    "formatted": "NT$18,426",
+                    "pricingOptionId": "Uax9dOlalSxR"
+                },
+                "legs": [
+                    {
+                        "id": "17075-2409132025--31974-0-12234-2409140045",
+                        "origin": {
+                            "id": "TPE",
+                            "entityId": "128667054",
+                            "name": "Taipei Taiwan Taoyuan",
+                            "displayCode": "TPE",
+                            "city": "Taipei",
+                            "country": "Taiwan",
+                            "isHighlighted": false
+                        },
+                        "destination": {
+                            "id": "HND",
+                            "entityId": "128667143",
+                            "name": "Tokyo Haneda",
+                            "displayCode": "HND",
+                            "city": "Tokyo",
+                            "country": "Japan",
+                            "isHighlighted": false
+                        },
+                        "durationInMinutes": 200,
+                        "stopCount": 0,
+                        "isSmallestStops": false,
+                        "departure": "2024-09-13T20:25:00",
+                        "arrival": "2024-09-14T00:45:00",
+                        "timeDeltaInDays": 1,
+                        "carriers": {
+                            "marketing": [
+                                {
+                                    "id": -31974,
+                                    "logoUrl": "https://logos.skyscnr.com/images/airlines/favicon/03.png",
+                                    "name": "Peach"
+                                }
+                            ],
+                            "operationType": "fully_operated"
+                        },
+                        "segments": [
+                            {
+                                "id": "17075-12234-2409132025-2409140045--31974",
+                                "origin": {
+                                    "flightPlaceId": "TPE",
+                                    "displayCode": "TPE",
+                                    "parent": {
+                                        "flightPlaceId": "TPET",
+                                        "displayCode": "TPE",
+                                        "name": "Taipei",
+                                        "type": "City"
+                                    },
+                                    "name": "Taipei Taiwan Taoyuan",
+                                    "type": "Airport",
+                                    "country": "Taiwan"
+                                },
+                                "destination": {
+                                    "flightPlaceId": "HND",
+                                    "displayCode": "HND",
+                                    "parent": {
+                                        "flightPlaceId": "TYOA",
+                                        "displayCode": "TYO",
+                                        "name": "Tokyo",
+                                        "type": "City"
+                                    },
+                                    "name": "Tokyo Haneda",
+                                    "type": "Airport",
+                                    "country": "Japan"
+                                },
+                                "departure": "2024-09-13T20:25:00",
+                                "arrival": "2024-09-14T00:45:00",
+                                "durationInMinutes": 200,
+                                "flightNumber": "860",
+                                "marketingCarrier": {
+                                    "id": -31974,
+                                    "name": "Peach",
+                                    "alternateId": "03",
+                                    "allianceId": 0,
+                                    "displayCode": ""
+                                },
+                                "operatingCarrier": {
+                                    "id": -31974,
+                                    "name": "Peach",
+                                    "alternateId": "03",
+                                    "allianceId": 0,
+                                    "displayCode": ""
+                                }
+                            }
+                        ]
+                    },
+                    {
+                        "id": "12234-2409170525--31444-0-17075-2409170800",
+                        "origin": {
+                            "id": "HND",
+                            "entityId": "128667143",
+                            "name": "Tokyo Haneda",
+                            "displayCode": "HND",
+                            "city": "Tokyo",
+                            "country": "Japan",
+                            "isHighlighted": false
+                        },
+                        "destination": {
+                            "id": "TPE",
+                            "entityId": "128667054",
+                            "name": "Taipei Taiwan Taoyuan",
+                            "displayCode": "TPE",
+                            "city": "Taipei",
+                            "country": "Taiwan",
+                            "isHighlighted": false
+                        },
+                        "durationInMinutes": 215,
+                        "stopCount": 0,
+                        "isSmallestStops": false,
+                        "departure": "2024-09-17T05:25:00",
+                        "arrival": "2024-09-17T08:00:00",
+                        "timeDeltaInDays": 0,
+                        "carriers": {
+                            "marketing": [
+                                {
+                                    "id": -31444,
+                                    "logoUrl": "https://logos.skyscnr.com/images/airlines/favicon/IT.png",
+                                    "name": "Tigerair Taiwan"
+                                }
+                            ],
+                            "operationType": "fully_operated"
+                        },
+                        "segments": [
+                            {
+                                "id": "12234-17075-2409170525-2409170800--31444",
+                                "origin": {
+                                    "flightPlaceId": "HND",
+                                    "displayCode": "HND",
+                                    "parent": {
+                                        "flightPlaceId": "TYOA",
+                                        "displayCode": "TYO",
+                                        "name": "Tokyo",
+                                        "type": "City"
+                                    },
+                                    "name": "Tokyo Haneda",
+                                    "type": "Airport",
+                                    "country": "Japan"
+                                },
+                                "destination": {
+                                    "flightPlaceId": "TPE",
+                                    "displayCode": "TPE",
+                                    "parent": {
+                                        "flightPlaceId": "TPET",
+                                        "displayCode": "TPE",
+                                        "name": "Taipei",
+                                        "type": "City"
+                                    },
+                                    "name": "Taipei Taiwan Taoyuan",
+                                    "type": "Airport",
+                                    "country": "Taiwan"
+                                },
+                                "departure": "2024-09-17T05:25:00",
+                                "arrival": "2024-09-17T08:00:00",
+                                "durationInMinutes": 215,
+                                "flightNumber": "217",
+                                "marketingCarrier": {
+                                    "id": -31444,
+                                    "name": "Tigerair Taiwan",
+                                    "alternateId": "IT",
+                                    "allianceId": 0,
+                                    "displayCode": ""
+                                },
+                                "operatingCarrier": {
+                                    "id": -31444,
+                                    "name": "Tigerair Taiwan",
+                                    "alternateId": "IT",
+                                    "allianceId": 0,
+                                    "displayCode": ""
+                                }
+                            }
+                        ]
+                    }
+                ],
+                "isSelfTransfer": false,
+                "isProtectedSelfTransfer": false,
+                "farePolicy": {
+                    "isChangeAllowed": false,
+                    "isPartiallyChangeable": false,
+                    "isCancellationAllowed": false,
+                    "isPartiallyRefundable": false
+                },
+                "eco": {
+                    "ecoContenderDelta": 16.4769
+                },
+                "fareAttributes": {},
+                "tags": [
+                    "cheapest",
+                    "shortest"
+                ],
+                "isMashUp": false,
+                "hasFlexibleOptions": false,
+                "score": 0.800496
+            }
+        ],
+        "messages": [],
+        "filterStats": {
+            "duration": {
+                "min": 215,
+                "max": 580,
+                "multiCityMin": 415,
+                "multiCityMax": 1135
+            },
+            "airports": [
+                {
+                    "city": "Taipei",
+                    "airports": [
+                        {
+                            "id": "TPE",
+                            "entityId": "128667054",
+                            "name": "Taipei Taiwan Taoyuan"
+                        }
+                    ]
+                },
+                {
+                    "city": "Tokyo",
+                    "airports": [
+                        {
+                            "id": "HND",
+                            "entityId": "128667143",
+                            "name": "Tokyo Haneda"
+                        }
+                    ]
+                }
+            ],
+            "carriers": [
+                {
+                    "id": -32456,
+                    "logoUrl": "https://logos.skyscnr.com/images/airlines/favicon/CX.png",
+                    "name": "Cathay Pacific"
+                },
+                {
+                    "id": -32184,
+                    "logoUrl": "https://logos.skyscnr.com/images/airlines/favicon/JL.png",
+                    "name": "Japan Airlines"
+                },
+                {
+                    "id": -31974,
+                    "logoUrl": "https://logos.skyscnr.com/images/airlines/favicon/03.png",
+                    "name": "Peach"
+                },
+                {
+                    "id": -31444,
+                    "logoUrl": "https://logos.skyscnr.com/images/airlines/favicon/IT.png",
+                    "name": "Tigerair Taiwan"
+                }
+            ],
+            "stopPrices": {
+                "direct": {
+                    "isPresent": true,
+                    "formattedPrice": "NT$18,426"
+                },
+                "one": {
+                    "isPresent": true,
+                    "formattedPrice": "NT$18,885"
+                },
+                "twoOrMore": {
+                    "isPresent": false
+                }
+            }
+        },
+        "flightsSessionId": "168c30fc-9591-4360-b216-4406299cf102",
+        "destinationImageUrl": "https://content.skyscnr.com/m/3719e8f4a5daf43d/original/Flights-Placeholder.jpg",
+        "token": "eyJhIjoxLCJjIjowLCJpIjowLCJjYyI6ImVjb25vbXkiLCJvIjoiVFBFIiwiZCI6IkhORCIsImQxIjoiMjAyNC0wOS0xMyIsImQyIjoiMjAyNC0wOS0xNyJ9"
+    },
+    "status": true,
+    "message": "Successful"
+}
