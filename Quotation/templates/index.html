@@ -41,11 +41,13 @@
         <tr>
             <td>{{ data.ProductName }}</td>
             <td>{{ data.UnitPrice }}</td>
-            <td>{{ data.UnitQuantity }}</td>
-            <td>{{ data.UnitTotalPrice }}</td>
+            <td>
+                <input type="number" value="{{ data.UnitQuantity }}" min="1" oninput="calculateTotalPrice(this, {{ data.UnitPrice }}, '{{ data.id }}')">
+            </td>
+            <td class="unit-total-price">{{ data.UnitTotalPrice }}</td>
             <td>
                 <form method="POST" action="/delete" style="display:inline;">
-                    <input type="hidden" name="ProductName" value="{{ data.ProductName }}">
+                    <input type="hidden" name="ProductID" value="{{ data.id }}">
                     <button type="submit">Delete</button>
                 </form>
             </td>
@@ -53,6 +55,41 @@
         {% endfor %}
     </table>
 
+    <h3>Total Price: <span id="total-price">{{ total_price }}</span></h3>
+
+    <script>
+    function calculateTotalPrice(input, unitPrice, productId) {
+        const quantity = parseInt(input.value) || 1;  // 如果输入为空，默认为1
+        const totalPrice = unitPrice * quantity;
+        input.closest('tr').querySelector('.unit-total-price').textContent = totalPrice.toFixed(2);
+
+        // 发送AJAX请求更新会话中的数量和总价
+        fetch('/update_quantity', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify({
+                productId: productId,
+                unitQuantity: quantity,
+                unitTotalPrice: totalPrice
+            })
+        }).then(() => {
+            updateTotalPrice();
+        });
+    }
+
+    function updateTotalPrice() {
+        let totalPrice = 0;
+        document.querySelectorAll('.unit-total-price').forEach(element => {
+            totalPrice += parseFloat(element.textContent);
+        });
+        document.getElementById('total-price').textContent = totalPrice.toFixed(2);
+    }
+
+    // 初始化总价
+    updateTotalPrice();
+    </script>
 </body>
 </html>
 

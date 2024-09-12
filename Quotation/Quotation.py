@@ -1,4 +1,5 @@
-from flask import Flask, render_template, request, redirect, url_for, session
+import uuid  # 添加这一行
+from flask import Flask, render_template, request, redirect, url_for, session, jsonify
 import pyodbc   
 
 app = Flask(__name__)
@@ -35,26 +36,52 @@ def index():
         else:
             error = "No ProductID provided."  # 未提供 ProductID
 
-    total_price = sum(item['UnitPrice'] for item in session['added_data'])  # 計算已添加產品的總價
+    total_price = sum(item['UnitTotalPrice'] for item in session['added_data'])  # 計算已添加產品的總價
     return render_template('index.html', query_result=query_result, added_data=session['added_data'], total_price=total_price, error=error)
 
 @app.route('/add', methods=['POST'])
 def add():
     product_name = request.form.get('ProductName')
     unit_price = request.form.get('UnitPrice')
+    unit_quantity = request.form.get('UnitQuantity', 1)  # 获取数量，默认为1
     if product_name and unit_price:
-        new_data = {'ProductName': product_name, 'UnitPrice': float(unit_price)}  # 新增產品資料
-        session['added_data'].append(new_data)  # 將新資料添加到會話中
-        session.modified = True  # 標記會話已修改
-    return redirect(url_for('index'))  # 重定向到首頁
+        unit_price = float(unit_price)
+        unit_quantity = int(unit_quantity) if unit_quantity else 1  # 如果数量为空，默认为1
+        unit_total_price = unit_price * unit_quantity
+        new_data = {
+            'id': str(uuid.uuid4()),  # 为每个产品实例生成唯一ID
+            'ProductName': product_name,
+            'UnitPrice': unit_price,
+            'UnitQuantity': unit_quantity,
+            'UnitTotalPrice': unit_total_price
+        }
+        session['added_data'].append(new_data)  # 将新数据添加到会话中
+        session.modified = True  # 标记会话已修改
+    return redirect(url_for('index'))  # 重定向到首页
 
 @app.route('/delete', methods=['POST'])
 def delete():
-    product_name = request.form.get('ProductName')
-    if product_name:
-        session['added_data'] = [data for data in session['added_data'] if data['ProductName'] != product_name]  # 刪除指定產品
+    product_id = request.form.get('ProductID')
+    if product_id:
+        session['added_data'] = [data for data in session['added_data'] if data['id'] != product_id]  # 刪除指定產品
         session.modified = True  # 標記會話已修改
     return redirect(url_for('index'))  # 重定向到首頁
+
+@app.route('/update_quantity', methods=['POST'])
+def update_quantity():
+    data = request.get_json()
+    product_id = data.get('productId')
+    unit_quantity = data.get('unitQuantity')
+    unit_total_price = data.get('unitTotalPrice')
+
+    for item in session['added_data']:
+        if item['id'] == product_id:
+            item['UnitQuantity'] = unit_quantity
+            item['UnitTotalPrice'] = unit_total_price
+            break
+
+    session.modified = True
+    return jsonify(success=True)
 
 if __name__ == '__main__':
     app.run(debug=True)
