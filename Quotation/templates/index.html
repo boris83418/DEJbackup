@@ -21,7 +21,6 @@
             <form method="POST" action="/add" style="display:inline;">
                 <input type="hidden" name="ProductName" value="{{ result.ProductName }}">
                 <input type="hidden" name="UnitPrice" value="{{ result.UnitPrice }}">
-                <input type="hidden" name="UnitQuantity" value="{{ result.UnitQuantity }}">
                 <button type="submit">Add</button>
             </form>
         </li>
@@ -59,9 +58,9 @@
 
     <script>
     function calculateTotalPrice(input, unitPrice, productId) {
-        const quantity = parseInt(input.value) || 1;  // 如果输入为空，默认为1
-        const totalPrice = unitPrice * quantity;
-        input.closest('tr').querySelector('.unit-total-price').textContent = totalPrice.toFixed(2);
+        const quantity = parseInt(input.value) || 1;  
+        const UnitTotalPrice = unitPrice * quantity;
+        input.closest('tr').querySelector('.unit-total-price').textContent = UnitTotalPrice.toFixed(2);
 
         // 发送AJAX请求更新会话中的数量和总价
         fetch('/update_quantity', {
@@ -72,7 +71,7 @@
             body: JSON.stringify({
                 productId: productId,
                 unitQuantity: quantity,
-                unitTotalPrice: totalPrice
+                unitTotalPrice: UnitTotalPrice
             })
         }).then(() => {
             updateTotalPrice();

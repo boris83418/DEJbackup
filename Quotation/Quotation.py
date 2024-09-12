@@ -43,10 +43,9 @@ def index():
 def add():
     product_name = request.form.get('ProductName')
     unit_price = request.form.get('UnitPrice')
-    unit_quantity = request.form.get('UnitQuantity', 1)  # 获取数量，默认为1
     if product_name and unit_price:
         unit_price = float(unit_price)
-        unit_quantity = int(unit_quantity) if unit_quantity else 1  # 如果数量为空，默认为1
+        unit_quantity = 1  # 如果数量为空，默认为1
         unit_total_price = unit_price * unit_quantity
         new_data = {
             'id': str(uuid.uuid4()),  # 为每个产品实例生成唯一ID
