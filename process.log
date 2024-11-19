@@ -1,0 +1,76 @@
+2024-11-19 11:50:19,428 - INFO - ê¨å˜òAê¸ìûéëóøå…: jpdejitdev01/ITQAS2
+2024-11-19 11:50:19,428 - INFO - ô|óùçHçÏï\: Customer Code
+2024-11-19 11:50:22,880 - INFO - é∑çs SQL: 
+        IF OBJECT_ID(N'dbo.SoftBank_Data_CustomerCode', N'U') IS NOT NULL
+            DROP TABLE dbo.SoftBank_Data_CustomerCode;
+
+        CREATE TABLE dbo.SoftBank_Data_CustomerCode (
+        [ASP] NVARCHAR(255) PRIMARY KEY,
+[Customer_code] NVARCHAR(255)
+);
+2024-11-19 11:50:22,898 - INFO - Customer Code ï\äiåöóßäÆê¨
+2024-11-19 11:50:23,161 - INFO - ô|óùçHçÏï\: FactoryShipment
+2024-11-19 11:50:23,192 - INFO - é∑çs SQL: 
+        IF OBJECT_ID(N'dbo.SoftBank_Data_FactoryShipment', N'U') IS NOT NULL
+            DROP TABLE dbo.SoftBank_Data_FactoryShipment;
+
+        CREATE TABLE dbo.SoftBank_Data_FactoryShipment (
+        [PartNo_ETA_FLTC] NVARCHAR(255) PRIMARY KEY,
+[PO_Date] DATE,
+[Item] NVARCHAR(255),
+[PO_NO] NVARCHAR(255),
+[Part_No] NVARCHAR(255),
+[Qty] INT,
+[Actual_Ex_fac_date] DATE,
+[ETD_SH] DATE,
+[ETA_FLTC] DATE,
+[Original_ETA] DATE,
+[ship_method] NVARCHAR(255),
+[ETA_Year] INT,
+[Status] NVARCHAR(255)
+);
+2024-11-19 11:50:23,211 - INFO - FactoryShipment ï\äiåöóßäÆê¨
+2024-11-19 11:50:23,230 - INFO - ô|óùçHçÏï\: Orderinfo
+2024-11-19 11:50:23,263 - INFO - é∑çs SQL: 
+        IF OBJECT_ID(N'dbo.SoftBank_Data_Orderinfo', N'U') IS NOT NULL
+            DROP TABLE dbo.SoftBank_Data_Orderinfo;
+
+        CREATE TABLE dbo.SoftBank_Data_Orderinfo (
+        [DEJ_Estimate_Number] NVARCHAR(255),
+[Order_Date] DATE,
+[Actual_Shipment_Date] DATE,
+[Estimated_Shipment_Date] DATE,
+[Delivery_Date] DATE,
+[Desired_Delivery_Date] DATE,
+[Standard_Delivery_Time] INT,
+[Station_Name] NVARCHAR(255),
+[Product_Name] NVARCHAR(255),
+[Quantity] INT,
+[OrdererLocation] NVARCHAR(255),
+[Person_in_Charge] NVARCHAR(255),
+[Recipient] NVARCHAR(255),
+[Contact_Department_Name] NVARCHAR(255),
+[Contact_Person] NVARCHAR(255),
+[Contact_Address] NVARCHAR(255),
+[ContactPhone] NVARCHAR(255),
+[ContactNotes] NVARCHAR(255),
+[SO_NO] NVARCHAR(255),
+[DN_NO] NVARCHAR(255),
+[Invoice_Number] NVARCHAR(255)
+);
+2024-11-19 11:50:23,785 - INFO - Orderinfo ï\äiåöóßäÆê¨
+2024-11-19 11:50:24,300 - INFO - ô|óùçHçÏï\: Productinfo
+2024-11-19 11:50:24,329 - INFO - é∑çs SQL: 
+        IF OBJECT_ID(N'dbo.SoftBank_Data_Productinfo', N'U') IS NOT NULL
+            DROP TABLE dbo.SoftBank_Data_Productinfo;
+
+        CREATE TABLE dbo.SoftBank_Data_Productinfo (
+        [Delta_PartNO] NVARCHAR(255) PRIMARY KEY,
+[Category] NVARCHAR(255),
+[Customer_Model_Name] NVARCHAR(255),
+[Model] NVARCHAR(255),
+[UnitPrice] INT,
+[Standard_Delivery_Time] INT
+);
+2024-11-19 11:50:24,343 - INFO - Productinfo ï\äiåöóßäÆê¨
+2024-11-19 11:50:24,660 - INFO - èäóLéëóøõﬂê¨å˜õçì¸éëóøå…

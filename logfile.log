@@ -1,0 +1,413 @@
+2024-11-19 11:59:03,202 - INFO - 成功連線到資料庫: jpdejitdev01/ITQAS2
+2024-11-19 11:59:03,203 - INFO - 處理工作表: Customer Code
+2024-11-19 11:59:04,264 - INFO - 執行 SQL: 
+        IF OBJECT_ID(N'dbo.SoftBank_Data_CustomerCode', N'U') IS NOT NULL
+            DROP TABLE dbo.SoftBank_Data_CustomerCode;
+
+        CREATE TABLE dbo.SoftBank_Data_CustomerCode (
+        [ASP] NVARCHAR(255) PRIMARY KEY,
+[Customer_code] NVARCHAR(255)
+);
+2024-11-19 11:59:04,274 - INFO - Customer Code 表格建立完成
+2024-11-19 11:59:04,274 - ERROR - 插入資料時出錯: ('The SQL contains 2 parameter markers, but 1 parameters were supplied', 'HY000')
+2024-11-19 11:59:04,275 - ERROR - 插入資料時出錯: ('The SQL contains 2 parameter markers, but 1 parameters were supplied', 'HY000')
+2024-11-19 11:59:04,278 - ERROR - 插入資料時出錯: ('The SQL contains 2 parameter markers, but 1 parameters were supplied', 'HY000')
+2024-11-19 11:59:04,278 - ERROR - 插入資料時出錯: ('The SQL contains 2 parameter markers, but 1 parameters were supplied', 'HY000')
+2024-11-19 11:59:04,278 - ERROR - 插入資料時出錯: ('The SQL contains 2 parameter markers, but 1 parameters were supplied', 'HY000')
+2024-11-19 11:59:04,279 - ERROR - 插入資料時出錯: ('The SQL contains 2 parameter markers, but 1 parameters were supplied', 'HY000')
+2024-11-19 11:59:04,279 - ERROR - 插入資料時出錯: ('The SQL contains 2 parameter markers, but 1 parameters were supplied', 'HY000')
+2024-11-19 11:59:04,279 - ERROR - 插入資料時出錯: ('The SQL contains 2 parameter markers, but 1 parameters were supplied', 'HY000')
+2024-11-19 11:59:04,279 - ERROR - 插入資料時出錯: ('The SQL contains 2 parameter markers, but 1 parameters were supplied', 'HY000')
+2024-11-19 11:59:04,280 - ERROR - 插入資料時出錯: ('The SQL contains 2 parameter markers, but 1 parameters were supplied', 'HY000')
+2024-11-19 11:59:04,280 - ERROR - 插入資料時出錯: ('The SQL contains 2 parameter markers, but 1 parameters were supplied', 'HY000')
+2024-11-19 11:59:04,280 - ERROR - 插入資料時出錯: ('The SQL contains 2 parameter markers, but 1 parameters were supplied', 'HY000')
+2024-11-19 11:59:04,280 - ERROR - 插入資料時出錯: ('The SQL contains 2 parameter markers, but 1 parameters were supplied', 'HY000')
+2024-11-19 11:59:04,280 - ERROR - 插入資料時出錯: ('The SQL contains 2 parameter markers, but 1 parameters were supplied', 'HY000')
+2024-11-19 11:59:04,281 - ERROR - 插入資料時出錯: ('The SQL contains 2 parameter markers, but 1 parameters were supplied', 'HY000')
+2024-11-19 11:59:04,281 - ERROR - 插入資料時出錯: ('The SQL contains 2 parameter markers, but 1 parameters were supplied', 'HY000')
+2024-11-19 11:59:04,281 - ERROR - 插入資料時出錯: ('The SQL contains 2 parameter markers, but 1 parameters were supplied', 'HY000')
+2024-11-19 11:59:04,281 - ERROR - 插入資料時出錯: ('The SQL contains 2 parameter markers, but 1 parameters were supplied', 'HY000')
+2024-11-19 11:59:04,281 - ERROR - 插入資料時出錯: ('The SQL contains 2 parameter markers, but 1 parameters were supplied', 'HY000')
+2024-11-19 11:59:04,281 - ERROR - 插入資料時出錯: ('The SQL contains 2 parameter markers, but 1 parameters were supplied', 'HY000')
+2024-11-19 11:59:04,281 - ERROR - 插入資料時出錯: ('The SQL contains 2 parameter markers, but 1 parameters were supplied', 'HY000')
+2024-11-19 11:59:04,282 - ERROR - 插入資料時出錯: ('The SQL contains 2 parameter markers, but 1 parameters were supplied', 'HY000')
+2024-11-19 11:59:04,282 - ERROR - 插入資料時出錯: ('The SQL contains 2 parameter markers, but 1 parameters were supplied', 'HY000')
+2024-11-19 11:59:04,282 - ERROR - 插入資料時出錯: ('The SQL contains 2 parameter markers, but 1 parameters were supplied', 'HY000')
+2024-11-19 11:59:04,282 - ERROR - 插入資料時出錯: ('The SQL contains 2 parameter markers, but 1 parameters were supplied', 'HY000')
+2024-11-19 11:59:04,282 - ERROR - 插入資料時出錯: ('The SQL contains 2 parameter markers, but 1 parameters were supplied', 'HY000')
+2024-11-19 11:59:04,283 - ERROR - 插入資料時出錯: ('The SQL contains 2 parameter markers, but 1 parameters were supplied', 'HY000')
+2024-11-19 11:59:04,283 - ERROR - 插入資料時出錯: ('The SQL contains 2 parameter markers, but 1 parameters were supplied', 'HY000')
+2024-11-19 11:59:04,283 - ERROR - 插入資料時出錯: ('The SQL contains 2 parameter markers, but 1 parameters were supplied', 'HY000')
+2024-11-19 11:59:04,283 - ERROR - 插入資料時出錯: ('The SQL contains 2 parameter markers, but 1 parameters were supplied', 'HY000')
+2024-11-19 11:59:04,283 - ERROR - 插入資料時出錯: ('The SQL contains 2 parameter markers, but 1 parameters were supplied', 'HY000')
+2024-11-19 11:59:04,283 - ERROR - 插入資料時出錯: ('The SQL contains 2 parameter markers, but 1 parameters were supplied', 'HY000')
+2024-11-19 11:59:04,283 - ERROR - 插入資料時出錯: ('The SQL contains 2 parameter markers, but 1 parameters were supplied', 'HY000')
+2024-11-19 11:59:04,283 - ERROR - 插入資料時出錯: ('The SQL contains 2 parameter markers, but 1 parameters were supplied', 'HY000')
+2024-11-19 11:59:04,284 - ERROR - 插入資料時出錯: ('The SQL contains 2 parameter markers, but 1 parameters were supplied', 'HY000')
+2024-11-19 11:59:04,284 - ERROR - 插入資料時出錯: ('The SQL contains 2 parameter markers, but 1 parameters were supplied', 'HY000')
+2024-11-19 11:59:04,284 - ERROR - 插入資料時出錯: ('The SQL contains 2 parameter markers, but 1 parameters were supplied', 'HY000')
+2024-11-19 11:59:04,284 - ERROR - 插入資料時出錯: ('The SQL contains 2 parameter markers, but 1 parameters were supplied', 'HY000')
+2024-11-19 11:59:04,284 - ERROR - 插入資料時出錯: ('The SQL contains 2 parameter markers, but 1 parameters were supplied', 'HY000')
+2024-11-19 11:59:04,284 - ERROR - 插入資料時出錯: ('The SQL contains 2 parameter markers, but 1 parameters were supplied', 'HY000')
+2024-11-19 11:59:04,284 - ERROR - 插入資料時出錯: ('The SQL contains 2 parameter markers, but 1 parameters were supplied', 'HY000')
+2024-11-19 11:59:04,285 - ERROR - 插入資料時出錯: ('The SQL contains 2 parameter markers, but 1 parameters were supplied', 'HY000')
+2024-11-19 11:59:04,285 - ERROR - 插入資料時出錯: ('The SQL contains 2 parameter markers, but 1 parameters were supplied', 'HY000')
+2024-11-19 11:59:04,285 - ERROR - 插入資料時出錯: ('The SQL contains 2 parameter markers, but 1 parameters were supplied', 'HY000')
+2024-11-19 11:59:04,285 - ERROR - 插入資料時出錯: ('The SQL contains 2 parameter markers, but 1 parameters were supplied', 'HY000')
+2024-11-19 11:59:04,286 - ERROR - 插入資料時出錯: ('The SQL contains 2 parameter markers, but 1 parameters were supplied', 'HY000')
+2024-11-19 11:59:04,286 - ERROR - 插入資料時出錯: ('The SQL contains 2 parameter markers, but 1 parameters were supplied', 'HY000')
+2024-11-19 11:59:04,286 - ERROR - 插入資料時出錯: ('The SQL contains 2 parameter markers, but 1 parameters were supplied', 'HY000')
+2024-11-19 11:59:04,287 - ERROR - 插入資料時出錯: ('The SQL contains 2 parameter markers, but 1 parameters were supplied', 'HY000')
+2024-11-19 11:59:04,287 - ERROR - 插入資料時出錯: ('The SQL contains 2 parameter markers, but 1 parameters were supplied', 'HY000')
+2024-11-19 11:59:04,287 - ERROR - 插入資料時出錯: ('The SQL contains 2 parameter markers, but 1 parameters were supplied', 'HY000')
+2024-11-19 11:59:04,288 - ERROR - 插入資料時出錯: ('The SQL contains 2 parameter markers, but 1 parameters were supplied', 'HY000')
+2024-11-19 11:59:04,288 - ERROR - 插入資料時出錯: ('The SQL contains 2 parameter markers, but 1 parameters were supplied', 'HY000')
+2024-11-19 11:59:04,288 - ERROR - 插入資料時出錯: ('The SQL contains 2 parameter markers, but 1 parameters were supplied', 'HY000')
+2024-11-19 11:59:04,288 - ERROR - 插入資料時出錯: ('The SQL contains 2 parameter markers, but 1 parameters were supplied', 'HY000')
+2024-11-19 11:59:04,289 - ERROR - 插入資料時出錯: ('The SQL contains 2 parameter markers, but 1 parameters were supplied', 'HY000')
+2024-11-19 11:59:04,289 - ERROR - 插入資料時出錯: ('The SQL contains 2 parameter markers, but 1 parameters were supplied', 'HY000')
+2024-11-19 11:59:04,290 - ERROR - 插入資料時出錯: ('The SQL contains 2 parameter markers, but 1 parameters were supplied', 'HY000')
+2024-11-19 11:59:04,290 - ERROR - 插入資料時出錯: ('The SQL contains 2 parameter markers, but 1 parameters were supplied', 'HY000')
+2024-11-19 11:59:04,290 - ERROR - 插入資料時出錯: ('The SQL contains 2 parameter markers, but 1 parameters were supplied', 'HY000')
+2024-11-19 11:59:04,291 - ERROR - 插入資料時出錯: ('The SQL contains 2 parameter markers, but 1 parameters were supplied', 'HY000')
+2024-11-19 11:59:04,291 - ERROR - 插入資料時出錯: ('The SQL contains 2 parameter markers, but 1 parameters were supplied', 'HY000')
+2024-11-19 11:59:04,291 - ERROR - 插入資料時出錯: ('The SQL contains 2 parameter markers, but 1 parameters were supplied', 'HY000')
+2024-11-19 11:59:04,291 - ERROR - 插入資料時出錯: ('The SQL contains 2 parameter markers, but 1 parameters were supplied', 'HY000')
+2024-11-19 11:59:04,292 - ERROR - 插入資料時出錯: ('The SQL contains 2 parameter markers, but 1 parameters were supplied', 'HY000')
+2024-11-19 11:59:04,292 - ERROR - 插入資料時出錯: ('The SQL contains 2 parameter markers, but 1 parameters were supplied', 'HY000')
+2024-11-19 11:59:04,292 - ERROR - 插入資料時出錯: ('The SQL contains 2 parameter markers, but 1 parameters were supplied', 'HY000')
+2024-11-19 11:59:04,292 - ERROR - 插入資料時出錯: ('The SQL contains 2 parameter markers, but 1 parameters were supplied', 'HY000')
+2024-11-19 11:59:04,292 - ERROR - 插入資料時出錯: ('The SQL contains 2 parameter markers, but 1 parameters were supplied', 'HY000')
+2024-11-19 11:59:04,292 - ERROR - 插入資料時出錯: ('The SQL contains 2 parameter markers, but 1 parameters were supplied', 'HY000')
+2024-11-19 11:59:04,292 - ERROR - 插入資料時出錯: ('The SQL contains 2 parameter markers, but 1 parameters were supplied', 'HY000')
+2024-11-19 11:59:04,293 - ERROR - 插入資料時出錯: ('The SQL contains 2 parameter markers, but 1 parameters were supplied', 'HY000')
+2024-11-19 11:59:04,293 - ERROR - 插入資料時出錯: ('The SQL contains 2 parameter markers, but 1 parameters were supplied', 'HY000')
+2024-11-19 11:59:04,293 - ERROR - 插入資料時出錯: ('The SQL contains 2 parameter markers, but 1 parameters were supplied', 'HY000')
+2024-11-19 11:59:04,293 - ERROR - 插入資料時出錯: ('The SQL contains 2 parameter markers, but 1 parameters were supplied', 'HY000')
+2024-11-19 11:59:04,293 - ERROR - 插入資料時出錯: ('The SQL contains 2 parameter markers, but 1 parameters were supplied', 'HY000')
+2024-11-19 11:59:04,293 - ERROR - 插入資料時出錯: ('The SQL contains 2 parameter markers, but 1 parameters were supplied', 'HY000')
+2024-11-19 11:59:04,293 - ERROR - 插入資料時出錯: ('The SQL contains 2 parameter markers, but 1 parameters were supplied', 'HY000')
+2024-11-19 11:59:04,294 - ERROR - 插入資料時出錯: ('The SQL contains 2 parameter markers, but 1 parameters were supplied', 'HY000')
+2024-11-19 11:59:04,294 - ERROR - 插入資料時出錯: ('The SQL contains 2 parameter markers, but 1 parameters were supplied', 'HY000')
+2024-11-19 11:59:04,294 - ERROR - 插入資料時出錯: ('The SQL contains 2 parameter markers, but 1 parameters were supplied', 'HY000')
+2024-11-19 11:59:04,294 - ERROR - 插入資料時出錯: ('The SQL contains 2 parameter markers, but 1 parameters were supplied', 'HY000')
+2024-11-19 11:59:04,295 - ERROR - 插入資料時出錯: ('The SQL contains 2 parameter markers, but 1 parameters were supplied', 'HY000')
+2024-11-19 11:59:04,295 - INFO - 處理工作表: FactoryShipment
+2024-11-19 11:59:04,324 - INFO - 執行 SQL: 
+        IF OBJECT_ID(N'dbo.SoftBank_Data_FactoryShipment', N'U') IS NOT NULL
+            DROP TABLE dbo.SoftBank_Data_FactoryShipment;
+
+        CREATE TABLE dbo.SoftBank_Data_FactoryShipment (
+        [PartNo_ETA_FLTC] NVARCHAR(255) PRIMARY KEY,
+[PO_Date] DATE,
+[Item] NVARCHAR(255),
+[PO_NO] NVARCHAR(255),
+[Part_No] NVARCHAR(255),
+[Qty] INT,
+[Actual_Ex_fac_date] DATE,
+[ETD_SH] DATE,
+[ETA_FLTC] DATE,
+[Original_ETA] DATE,
+[ship_method] NVARCHAR(255),
+[ETA_Year] INT,
+[Status] NVARCHAR(255)
+);
+2024-11-19 11:59:04,336 - INFO - FactoryShipment 表格建立完成
+2024-11-19 11:59:04,337 - ERROR - 插入資料時出錯: ('The SQL contains 13 parameter markers, but 1 parameters were supplied', 'HY000')
+2024-11-19 11:59:04,337 - ERROR - 插入資料時出錯: ('The SQL contains 13 parameter markers, but 1 parameters were supplied', 'HY000')
+2024-11-19 11:59:04,337 - ERROR - 插入資料時出錯: ('The SQL contains 13 parameter markers, but 1 parameters were supplied', 'HY000')
+2024-11-19 11:59:04,338 - ERROR - 插入資料時出錯: ('The SQL contains 13 parameter markers, but 1 parameters were supplied', 'HY000')
+2024-11-19 11:59:04,338 - INFO - 處理工作表: Orderinfo
+2024-11-19 11:59:04,364 - INFO - 執行 SQL: 
+        IF OBJECT_ID(N'dbo.SoftBank_Data_Orderinfo', N'U') IS NOT NULL
+            DROP TABLE dbo.SoftBank_Data_Orderinfo;
+
+        CREATE TABLE dbo.SoftBank_Data_Orderinfo (
+        [DEJ_Estimate_Number] NVARCHAR(255),
+[Order_Date] DATE,
+[Actual_Shipment_Date] DATE,
+[Estimated_Shipment_Date] DATE,
+[Delivery_Date] DATE,
+[Desired_Delivery_Date] DATE,
+[Standard_Delivery_Time] INT,
+[Station_Name] NVARCHAR(255),
+[Product_Name] NVARCHAR(255),
+[Quantity] INT,
+[OrdererLocation] NVARCHAR(255),
+[Person_in_Charge] NVARCHAR(255),
+[Recipient] NVARCHAR(255),
+[Contact_Department_Name] NVARCHAR(255),
+[Contact_Person] NVARCHAR(255),
+[Contact_Address] NVARCHAR(255),
+[ContactPhone] NVARCHAR(255),
+[ContactNotes] NVARCHAR(255),
+[SO_NO] NVARCHAR(255),
+[DN_NO] NVARCHAR(255),
+[Invoice_Number] NVARCHAR(255)
+);
+2024-11-19 11:59:04,885 - INFO - Orderinfo 表格建立完成
+2024-11-19 11:59:04,886 - ERROR - 插入資料時出錯: ('The SQL contains 21 parameter markers, but 1 parameters were supplied', 'HY000')
+2024-11-19 11:59:04,886 - INFO - 處理工作表: Productinfo
+2024-11-19 11:59:04,915 - INFO - 執行 SQL: 
+        IF OBJECT_ID(N'dbo.SoftBank_Data_Productinfo', N'U') IS NOT NULL
+            DROP TABLE dbo.SoftBank_Data_Productinfo;
+
+        CREATE TABLE dbo.SoftBank_Data_Productinfo (
+        [Delta_PartNO] NVARCHAR(255) PRIMARY KEY,
+[Category] NVARCHAR(255),
+[Customer_Model_Name] NVARCHAR(255),
+[Model] NVARCHAR(255),
+[UnitPrice] INT,
+[Standard_Delivery_Time] INT
+);
+2024-11-19 11:59:04,926 - INFO - Productinfo 表格建立完成
+2024-11-19 11:59:04,927 - ERROR - 插入資料時出錯: ('The SQL contains 6 parameter markers, but 1 parameters were supplied', 'HY000')
+2024-11-19 11:59:04,927 - ERROR - 插入資料時出錯: ('The SQL contains 6 parameter markers, but 1 parameters were supplied', 'HY000')
+2024-11-19 11:59:04,927 - ERROR - 插入資料時出錯: ('The SQL contains 6 parameter markers, but 1 parameters were supplied', 'HY000')
+2024-11-19 11:59:04,927 - ERROR - 插入資料時出錯: ('The SQL contains 6 parameter markers, but 1 parameters were supplied', 'HY000')
+2024-11-19 11:59:04,928 - ERROR - 插入資料時出錯: ('The SQL contains 6 parameter markers, but 1 parameters were supplied', 'HY000')
+2024-11-19 11:59:04,928 - ERROR - 插入資料時出錯: ('The SQL contains 6 parameter markers, but 1 parameters were supplied', 'HY000')
+2024-11-19 11:59:04,928 - ERROR - 插入資料時出錯: ('The SQL contains 6 parameter markers, but 1 parameters were supplied', 'HY000')
+2024-11-19 11:59:04,928 - ERROR - 插入資料時出錯: ('The SQL contains 6 parameter markers, but 1 parameters were supplied', 'HY000')
+2024-11-19 11:59:04,928 - ERROR - 插入資料時出錯: ('The SQL contains 6 parameter markers, but 1 parameters were supplied', 'HY000')
+2024-11-19 11:59:04,929 - ERROR - 插入資料時出錯: ('The SQL contains 6 parameter markers, but 1 parameters were supplied', 'HY000')
+2024-11-19 11:59:04,929 - ERROR - 插入資料時出錯: ('The SQL contains 6 parameter markers, but 1 parameters were supplied', 'HY000')
+2024-11-19 11:59:04,929 - ERROR - 插入資料時出錯: ('The SQL contains 6 parameter markers, but 1 parameters were supplied', 'HY000')
+2024-11-19 11:59:04,930 - ERROR - 插入資料時出錯: ('The SQL contains 6 parameter markers, but 1 parameters were supplied', 'HY000')
+2024-11-19 11:59:04,930 - ERROR - 插入資料時出錯: ('The SQL contains 6 parameter markers, but 1 parameters were supplied', 'HY000')
+2024-11-19 11:59:04,930 - ERROR - 插入資料時出錯: ('The SQL contains 6 parameter markers, but 1 parameters were supplied', 'HY000')
+2024-11-19 11:59:04,930 - ERROR - 插入資料時出錯: ('The SQL contains 6 parameter markers, but 1 parameters were supplied', 'HY000')
+2024-11-19 11:59:04,930 - ERROR - 插入資料時出錯: ('The SQL contains 6 parameter markers, but 1 parameters were supplied', 'HY000')
+2024-11-19 11:59:04,931 - ERROR - 插入資料時出錯: ('The SQL contains 6 parameter markers, but 1 parameters were supplied', 'HY000')
+2024-11-19 11:59:04,931 - ERROR - 插入資料時出錯: ('The SQL contains 6 parameter markers, but 1 parameters were supplied', 'HY000')
+2024-11-19 11:59:04,931 - ERROR - 插入資料時出錯: ('The SQL contains 6 parameter markers, but 1 parameters were supplied', 'HY000')
+2024-11-19 11:59:04,932 - ERROR - 插入資料時出錯: ('The SQL contains 6 parameter markers, but 1 parameters were supplied', 'HY000')
+2024-11-19 11:59:04,932 - ERROR - 插入資料時出錯: ('The SQL contains 6 parameter markers, but 1 parameters were supplied', 'HY000')
+2024-11-19 11:59:04,932 - ERROR - 插入資料時出錯: ('The SQL contains 6 parameter markers, but 1 parameters were supplied', 'HY000')
+2024-11-19 11:59:04,932 - ERROR - 插入資料時出錯: ('The SQL contains 6 parameter markers, but 1 parameters were supplied', 'HY000')
+2024-11-19 11:59:04,932 - ERROR - 插入資料時出錯: ('The SQL contains 6 parameter markers, but 1 parameters were supplied', 'HY000')
+2024-11-19 11:59:04,933 - ERROR - 插入資料時出錯: ('The SQL contains 6 parameter markers, but 1 parameters were supplied', 'HY000')
+2024-11-19 11:59:04,933 - ERROR - 插入資料時出錯: ('The SQL contains 6 parameter markers, but 1 parameters were supplied', 'HY000')
+2024-11-19 11:59:04,934 - ERROR - 插入資料時出錯: ('The SQL contains 6 parameter markers, but 1 parameters were supplied', 'HY000')
+2024-11-19 11:59:04,934 - ERROR - 插入資料時出錯: ('The SQL contains 6 parameter markers, but 1 parameters were supplied', 'HY000')
+2024-11-19 11:59:04,934 - ERROR - 插入資料時出錯: ('The SQL contains 6 parameter markers, but 1 parameters were supplied', 'HY000')
+2024-11-19 11:59:04,934 - ERROR - 插入資料時出錯: ('The SQL contains 6 parameter markers, but 1 parameters were supplied', 'HY000')
+2024-11-19 11:59:04,934 - ERROR - 插入資料時出錯: ('The SQL contains 6 parameter markers, but 1 parameters were supplied', 'HY000')
+2024-11-19 11:59:04,935 - ERROR - 插入資料時出錯: ('The SQL contains 6 parameter markers, but 1 parameters were supplied', 'HY000')
+2024-11-19 11:59:04,935 - ERROR - 插入資料時出錯: ('The SQL contains 6 parameter markers, but 1 parameters were supplied', 'HY000')
+2024-11-19 11:59:04,935 - ERROR - 插入資料時出錯: ('The SQL contains 6 parameter markers, but 1 parameters were supplied', 'HY000')
+2024-11-19 11:59:04,935 - ERROR - 插入資料時出錯: ('The SQL contains 6 parameter markers, but 1 parameters were supplied', 'HY000')
+2024-11-19 11:59:04,936 - ERROR - 插入資料時出錯: ('The SQL contains 6 parameter markers, but 1 parameters were supplied', 'HY000')
+2024-11-19 11:59:04,936 - ERROR - 插入資料時出錯: ('The SQL contains 6 parameter markers, but 1 parameters were supplied', 'HY000')
+2024-11-19 11:59:04,936 - ERROR - 插入資料時出錯: ('The SQL contains 6 parameter markers, but 1 parameters were supplied', 'HY000')
+2024-11-19 11:59:04,936 - ERROR - 插入資料時出錯: ('The SQL contains 6 parameter markers, but 1 parameters were supplied', 'HY000')
+2024-11-19 11:59:04,936 - ERROR - 插入資料時出錯: ('The SQL contains 6 parameter markers, but 1 parameters were supplied', 'HY000')
+2024-11-19 11:59:04,937 - ERROR - 插入資料時出錯: ('The SQL contains 6 parameter markers, but 1 parameters were supplied', 'HY000')
+2024-11-19 11:59:04,937 - ERROR - 插入資料時出錯: ('The SQL contains 6 parameter markers, but 1 parameters were supplied', 'HY000')
+2024-11-19 11:59:04,937 - ERROR - 插入資料時出錯: ('The SQL contains 6 parameter markers, but 1 parameters were supplied', 'HY000')
+2024-11-19 11:59:04,937 - ERROR - 插入資料時出錯: ('The SQL contains 6 parameter markers, but 1 parameters were supplied', 'HY000')
+2024-11-19 11:59:04,938 - ERROR - 插入資料時出錯: ('The SQL contains 6 parameter markers, but 1 parameters were supplied', 'HY000')
+2024-11-19 11:59:04,938 - ERROR - 插入資料時出錯: ('The SQL contains 6 parameter markers, but 1 parameters were supplied', 'HY000')
+2024-11-19 11:59:04,938 - ERROR - 插入資料時出錯: ('The SQL contains 6 parameter markers, but 1 parameters were supplied', 'HY000')
+2024-11-19 11:59:04,938 - ERROR - 插入資料時出錯: ('The SQL contains 6 parameter markers, but 1 parameters were supplied', 'HY000')
+2024-11-19 11:59:04,938 - ERROR - 插入資料時出錯: ('The SQL contains 6 parameter markers, but 1 parameters were supplied', 'HY000')
+2024-11-19 11:59:04,939 - ERROR - 插入資料時出錯: ('The SQL contains 6 parameter markers, but 1 parameters were supplied', 'HY000')
+2024-11-19 11:59:04,939 - ERROR - 插入資料時出錯: ('The SQL contains 6 parameter markers, but 1 parameters were supplied', 'HY000')
+2024-11-19 11:59:04,939 - ERROR - 插入資料時出錯: ('The SQL contains 6 parameter markers, but 1 parameters were supplied', 'HY000')
+2024-11-19 11:59:04,939 - ERROR - 插入資料時出錯: ('The SQL contains 6 parameter markers, but 1 parameters were supplied', 'HY000')
+2024-11-19 11:59:04,940 - ERROR - 插入資料時出錯: ('The SQL contains 6 parameter markers, but 1 parameters were supplied', 'HY000')
+2024-11-19 11:59:04,940 - ERROR - 插入資料時出錯: ('The SQL contains 6 parameter markers, but 1 parameters were supplied', 'HY000')
+2024-11-19 11:59:04,940 - ERROR - 插入資料時出錯: ('The SQL contains 6 parameter markers, but 1 parameters were supplied', 'HY000')
+2024-11-19 11:59:04,941 - ERROR - 插入資料時出錯: ('The SQL contains 6 parameter markers, but 1 parameters were supplied', 'HY000')
+2024-11-19 11:59:04,941 - ERROR - 插入資料時出錯: ('The SQL contains 6 parameter markers, but 1 parameters were supplied', 'HY000')
+2024-11-19 11:59:04,941 - ERROR - 插入資料時出錯: ('The SQL contains 6 parameter markers, but 1 parameters were supplied', 'HY000')
+2024-11-19 11:59:04,941 - ERROR - 插入資料時出錯: ('The SQL contains 6 parameter markers, but 1 parameters were supplied', 'HY000')
+2024-11-19 11:59:04,941 - ERROR - 插入資料時出錯: ('The SQL contains 6 parameter markers, but 1 parameters were supplied', 'HY000')
+2024-11-19 11:59:04,942 - ERROR - 插入資料時出錯: ('The SQL contains 6 parameter markers, but 1 parameters were supplied', 'HY000')
+2024-11-19 11:59:04,942 - ERROR - 插入資料時出錯: ('The SQL contains 6 parameter markers, but 1 parameters were supplied', 'HY000')
+2024-11-19 11:59:04,942 - ERROR - 插入資料時出錯: ('The SQL contains 6 parameter markers, but 1 parameters were supplied', 'HY000')
+2024-11-19 11:59:04,942 - ERROR - 插入資料時出錯: ('The SQL contains 6 parameter markers, but 1 parameters were supplied', 'HY000')
+2024-11-19 11:59:04,943 - ERROR - 插入資料時出錯: ('The SQL contains 6 parameter markers, but 1 parameters were supplied', 'HY000')
+2024-11-19 11:59:04,948 - INFO - 所有資料已成功寫入資料庫
+2024-11-19 12:00:48,280 - INFO - 成功連線到資料庫: jpdejitdev01/ITQAS2
+2024-11-19 12:00:48,281 - INFO - 處理工作表: Customer Code
+2024-11-19 12:00:49,074 - INFO - 執行 SQL: 
+        IF OBJECT_ID(N'dbo.SoftBank_Data_CustomerCode', N'U') IS NOT NULL
+            DROP TABLE dbo.SoftBank_Data_CustomerCode;
+
+        CREATE TABLE dbo.SoftBank_Data_CustomerCode (
+        [ASP] NVARCHAR(255) PRIMARY KEY,
+[Customer_code] NVARCHAR(255)
+);
+2024-11-19 12:00:49,085 - INFO - Customer Code 表格建立完成
+2024-11-19 12:00:49,364 - INFO - 處理工作表: FactoryShipment
+2024-11-19 12:00:49,413 - INFO - 執行 SQL: 
+        IF OBJECT_ID(N'dbo.SoftBank_Data_FactoryShipment', N'U') IS NOT NULL
+            DROP TABLE dbo.SoftBank_Data_FactoryShipment;
+
+        CREATE TABLE dbo.SoftBank_Data_FactoryShipment (
+        [PartNo_ETA_FLTC] NVARCHAR(255) PRIMARY KEY,
+[PO_Date] DATE,
+[Item] NVARCHAR(255),
+[PO_NO] NVARCHAR(255),
+[Part_No] NVARCHAR(255),
+[Qty] INT,
+[Actual_Ex_fac_date] DATE,
+[ETD_SH] DATE,
+[ETA_FLTC] DATE,
+[Original_ETA] DATE,
+[ship_method] NVARCHAR(255),
+[ETA_Year] INT,
+[Status] NVARCHAR(255)
+);
+2024-11-19 12:00:49,425 - INFO - FactoryShipment 表格建立完成
+2024-11-19 12:00:49,449 - INFO - 處理工作表: Orderinfo
+2024-11-19 12:00:49,479 - INFO - 執行 SQL: 
+        IF OBJECT_ID(N'dbo.SoftBank_Data_Orderinfo', N'U') IS NOT NULL
+            DROP TABLE dbo.SoftBank_Data_Orderinfo;
+
+        CREATE TABLE dbo.SoftBank_Data_Orderinfo (
+        [DEJ_Estimate_Number] NVARCHAR(255),
+[Order_Date] DATE,
+[Actual_Shipment_Date] DATE,
+[Estimated_Shipment_Date] DATE,
+[Delivery_Date] DATE,
+[Desired_Delivery_Date] DATE,
+[Standard_Delivery_Time] INT,
+[Station_Name] NVARCHAR(255),
+[Product_Name] NVARCHAR(255),
+[Quantity] INT,
+[OrdererLocation] NVARCHAR(255),
+[Person_in_Charge] NVARCHAR(255),
+[Recipient] NVARCHAR(255),
+[Contact_Department_Name] NVARCHAR(255),
+[Contact_Person] NVARCHAR(255),
+[Contact_Address] NVARCHAR(255),
+[ContactPhone] NVARCHAR(255),
+[ContactNotes] NVARCHAR(255),
+[SO_NO] NVARCHAR(255),
+[DN_NO] NVARCHAR(255),
+[Invoice_Number] NVARCHAR(255)
+);
+2024-11-19 12:00:49,995 - INFO - Orderinfo 表格建立完成
+2024-11-19 12:00:50,511 - INFO - 處理工作表: Productinfo
+2024-11-19 12:00:50,544 - INFO - 執行 SQL: 
+        IF OBJECT_ID(N'dbo.SoftBank_Data_Productinfo', N'U') IS NOT NULL
+            DROP TABLE dbo.SoftBank_Data_Productinfo;
+
+        CREATE TABLE dbo.SoftBank_Data_Productinfo (
+        [Delta_PartNO] NVARCHAR(255) PRIMARY KEY,
+[Category] NVARCHAR(255),
+[Customer_Model_Name] NVARCHAR(255),
+[Model] NVARCHAR(255),
+[UnitPrice] INT,
+[Standard_Delivery_Time] INT
+);
+2024-11-19 12:00:50,555 - INFO - Productinfo 表格建立完成
+2024-11-19 12:00:50,629 - WARNING - 跳過重複主鍵值: TBM48050E2-1M22
+2024-11-19 12:00:50,798 - WARNING - 跳過重複主鍵值: ESR-48/56C F-A
+2024-11-19 12:00:50,866 - INFO - 所有資料已成功寫入資料庫
+2024-11-19 15:11:35,655 - INFO - 成功連線到資料庫: jpdejitdev01/ITQAS2
+2024-11-19 15:11:35,655 - INFO - 處理工作表: Customer Code
+2024-11-19 15:11:39,132 - INFO - Customer Code 表格建立完成
+2024-11-19 15:11:39,381 - INFO - 處理工作表: FactoryShipment
+2024-11-19 15:11:39,429 - INFO - FactoryShipment 表格建立完成
+2024-11-19 15:11:39,461 - INFO - 處理工作表: Orderinfo
+2024-11-19 15:11:40,006 - INFO - Orderinfo 表格建立完成
+2024-11-19 15:11:40,521 - INFO - 處理工作表: Productinfo
+2024-11-19 15:11:40,575 - INFO - Productinfo 表格建立完成
+2024-11-19 15:11:40,666 - WARNING - 跳過重複主鍵值: TBM48050E2-1M22
+2024-11-19 15:11:40,837 - WARNING - 跳過重複主鍵值: ESR-48/56C F-A
+2024-11-19 15:11:40,923 - INFO - 所有資料已成功寫入資料庫
+2024-11-19 15:54:47,075 - INFO - 成功連線到資料庫: jpdejitdev01/ITQAS2
+2024-11-19 15:54:47,076 - INFO - 處理工作表: Customer Code
+2024-11-19 15:54:48,253 - INFO - Customer Code 表格建立完成
+2024-11-19 15:54:48,514 - INFO - 處理工作表: FactoryShipment
+2024-11-19 15:54:48,576 - INFO - FactoryShipment 表格建立完成
+2024-11-19 15:54:48,598 - INFO - 處理工作表: Orderinfo
+2024-11-19 15:54:49,144 - INFO - Orderinfo 表格建立完成
+2024-11-19 15:54:49,672 - INFO - 處理工作表: Productinfo
+2024-11-19 15:54:49,717 - INFO - Productinfo 表格建立完成
+2024-11-19 15:54:49,789 - WARNING - 跳過重複主鍵值: TBM48050E2-1M22
+2024-11-19 15:54:49,952 - WARNING - 跳過重複主鍵值: ESR-48/56C F-A
+2024-11-19 15:54:50,028 - INFO - 所有資料已成功寫入資料庫
+2024-11-19 15:54:52,595 - ERROR - 匯出表格 SoftBankSummaryView 時發生錯誤: No module named 'xlsxwriter'
+2024-11-19 15:54:52,595 - ERROR - 處理過程中出現錯誤: No module named 'xlsxwriter'
+2024-11-19 15:56:11,080 - INFO - 成功連線到資料庫: jpdejitdev01/ITQAS2
+2024-11-19 15:56:11,082 - INFO - 處理工作表: Customer Code
+2024-11-19 15:56:11,919 - INFO - Customer Code 表格建立完成
+2024-11-19 15:56:12,262 - INFO - 處理工作表: FactoryShipment
+2024-11-19 15:56:12,316 - INFO - FactoryShipment 表格建立完成
+2024-11-19 15:56:12,338 - INFO - 處理工作表: Orderinfo
+2024-11-19 15:56:12,895 - INFO - Orderinfo 表格建立完成
+2024-11-19 15:56:13,411 - INFO - 處理工作表: Productinfo
+2024-11-19 15:56:13,474 - INFO - Productinfo 表格建立完成
+2024-11-19 15:56:13,556 - WARNING - 跳過重複主鍵值: TBM48050E2-1M22
+2024-11-19 15:56:13,715 - WARNING - 跳過重複主鍵值: ESR-48/56C F-A
+2024-11-19 15:56:13,798 - INFO - 所有資料已成功寫入資料庫
+2024-11-19 15:56:15,630 - INFO - 表格 SoftBankSummaryView 匯出成功至 D:\\DeltaBox\\OneDrive - Delta Electronics, Inc\\deltaproject\\DEJbackup\\Softbank\\SoftBankSummaryView.xlsx
+2024-11-19 16:00:59,110 - INFO - 成功連線到資料庫: jpdejitdev01/ITQAS2
+2024-11-19 16:00:59,111 - INFO - 處理工作表: Customer Code
+2024-11-19 16:01:02,368 - INFO - Customer Code 表格建立完成
+2024-11-19 16:01:02,640 - INFO - 處理工作表: FactoryShipment
+2024-11-19 16:01:02,685 - INFO - FactoryShipment 表格建立完成
+2024-11-19 16:01:02,708 - INFO - 處理工作表: Orderinfo
+2024-11-19 16:01:03,276 - INFO - Orderinfo 表格建立完成
+2024-11-19 16:01:03,786 - INFO - 處理工作表: Productinfo
+2024-11-19 16:01:03,843 - INFO - Productinfo 表格建立完成
+2024-11-19 16:01:03,920 - WARNING - 跳過重複主鍵值: TBM48050E2-1M22
+2024-11-19 16:01:04,079 - WARNING - 跳過重複主鍵值: ESR-48/56C F-A
+2024-11-19 16:01:04,166 - INFO - 所有資料已成功寫入資料庫
+2024-11-19 16:01:07,014 - INFO - 表格 SoftBankSummaryView 匯出成功至 D:\\DeltaBox\\OneDrive - Delta Electronics, Inc\\deltaproject\\DEJbackup\\Softbank\\SoftBankSummaryView.xlsx
+2024-11-19 16:05:33,918 - INFO - 成功連線到資料庫: jpdejitdev01/ITQAS2
+2024-11-19 16:05:33,920 - INFO - 處理工作表: Customer Code
+2024-11-19 16:05:37,305 - INFO - Customer Code 表格建立完成
+2024-11-19 16:05:37,556 - INFO - 處理工作表: FactoryShipment
+2024-11-19 16:05:37,600 - INFO - FactoryShipment 表格建立完成
+2024-11-19 16:05:37,620 - INFO - 處理工作表: Orderinfo
+2024-11-19 16:05:38,176 - INFO - Orderinfo 表格建立完成
+2024-11-19 16:05:38,688 - INFO - 處理工作表: Productinfo
+2024-11-19 16:05:38,737 - INFO - Productinfo 表格建立完成
+2024-11-19 16:05:38,803 - WARNING - 跳過重複主鍵值: TBM48050E2-1M22
+2024-11-19 16:05:38,956 - WARNING - 跳過重複主鍵值: ESR-48/56C F-A
+2024-11-19 16:05:39,041 - INFO - 所有資料已成功寫入資料庫
+2024-11-19 16:05:42,106 - INFO - 表格 SoftBankSummaryView 匯出成功至 D:\\DeltaBox\\OneDrive - Delta Electronics, Inc\\deltaproject\\DEJbackup\\Softbank\\SoftBankSummaryView.xlsx
+2024-11-19 16:11:56,300 - INFO - 成功連線到資料庫: jpdejitdev01/ITQAS2
+2024-11-19 16:11:56,301 - INFO - 處理工作表: Customer Code
+2024-11-19 16:11:57,351 - INFO - Customer Code 表格建立完成
+2024-11-19 16:11:57,619 - INFO - 處理工作表: FactoryShipment
+2024-11-19 16:11:57,663 - INFO - FactoryShipment 表格建立完成
+2024-11-19 16:11:57,691 - INFO - 處理工作表: Orderinfo
+2024-11-19 16:11:58,242 - INFO - Orderinfo 表格建立完成
+2024-11-19 16:11:58,756 - INFO - 處理工作表: Productinfo
+2024-11-19 16:11:58,812 - INFO - Productinfo 表格建立完成
+2024-11-19 16:11:58,898 - WARNING - 跳過重複主鍵值: TBM48050E2-1M22
+2024-11-19 16:11:59,061 - WARNING - 跳過重複主鍵值: ESR-48/56C F-A
+2024-11-19 16:11:59,140 - INFO - 所有資料已成功寫入資料庫
+2024-11-19 16:12:00,608 - INFO - 表格 SoftBankSummaryView 匯出成功至 D:\\DeltaBox\\OneDrive - Delta Electronics, Inc\\deltaproject\\DEJbackup\\Softbank\\SoftBankSummaryView.xlsx
+2024-11-19 16:13:03,213 - INFO - 成功連線到資料庫: jpdejitdev01/ITQAS2
+2024-11-19 16:13:03,213 - INFO - 處理工作表: Customer Code
+2024-11-19 16:13:03,991 - INFO - Customer Code 表格建立完成
+2024-11-19 16:13:04,297 - INFO - 處理工作表: FactoryShipment
+2024-11-19 16:13:04,368 - INFO - FactoryShipment 表格建立完成
+2024-11-19 16:13:04,388 - INFO - 處理工作表: Orderinfo
+2024-11-19 16:13:04,929 - INFO - Orderinfo 表格建立完成
+2024-11-19 16:13:05,442 - INFO - 處理工作表: Productinfo
+2024-11-19 16:13:05,496 - INFO - Productinfo 表格建立完成
+2024-11-19 16:13:05,568 - WARNING - 跳過重複主鍵值: TBM48050E2-1M22
+2024-11-19 16:13:05,731 - WARNING - 跳過重複主鍵值: ESR-48/56C F-A
+2024-11-19 16:13:05,812 - INFO - 所有資料已成功寫入資料庫
+2024-11-19 16:13:06,955 - INFO - 表格 SoftBankSummaryView 匯出成功至 D:\\DeltaBox\\OneDrive - Delta Electronics, Inc\\deltaproject\\DEJbackup\\Softbank\\SoftBankSummaryView.xlsx
+2024-11-19 17:02:47,888 - INFO - 成功連線到資料庫: jpdejitdev01/ITQAS2
+2024-11-19 17:02:47,889 - INFO - 處理工作表: Customer Code
+2024-11-19 17:02:51,205 - INFO - Customer Code 表格建立完成
+2024-11-19 17:02:51,499 - INFO - 處理工作表: FactoryShipment
+2024-11-19 17:02:51,542 - INFO - FactoryShipment 表格建立完成
+2024-11-19 17:02:51,562 - INFO - 處理工作表: Orderinfo
+2024-11-19 17:02:52,121 - INFO - Orderinfo 表格建立完成
+2024-11-19 17:02:52,640 - INFO - 處理工作表: Productinfo
+2024-11-19 17:02:52,691 - INFO - Productinfo 表格建立完成
+2024-11-19 17:02:52,763 - WARNING - 跳過重複主鍵值: TBM48050E2-1M22
+2024-11-19 17:02:52,931 - WARNING - 跳過重複主鍵值: ESR-48/56C F-A
+2024-11-19 17:02:53,014 - INFO - 所有資料已成功寫入資料庫
+2024-11-19 17:02:55,792 - INFO - 表格 SoftBankSummaryView 匯出成功至 D:\\DeltaBox\\OneDrive - Delta Electronics, Inc\\deltaproject\\DEJbackup\\Softbank\\SoftBankSummaryView.xlsx
