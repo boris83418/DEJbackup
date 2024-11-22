@@ -1,6 +1,7 @@
 import pandas as pd
 import pyodbc
 import logging
+from Softbank.SoftBank_SummaryTable_Export import export_summarytable_to_excel  # 導入匯出功能
 
 # 設定日誌紀錄
 logging.basicConfig(
@@ -25,27 +26,38 @@ def connect_to_database(server, database):
         raise
 
 # 創建資料庫表格
-def create_table(cursor, table_name, column_mappings, sheet_name):
+def create_or_clear_table(cursor, table_name, column_mappings, sheet_name):
     try:
-        sql = f"""
-        IF OBJECT_ID(N'{table_name}', N'U') IS NOT NULL
-            DROP TABLE {table_name};
+        # 檢查表格是否已存在
+        cursor.execute(f"IF OBJECT_ID(N'{table_name}', N'U') IS NOT NULL SELECT 1 ELSE SELECT 0")
+        table_exists = cursor.fetchone()[0]
 
-        CREATE TABLE {table_name} (
-        """
-        for excel_col, (db_col, db_type) in column_mappings[sheet_name].items():
-            if (sheet_name == 'Customer Code' and excel_col == 'ASP施工店') or \
-               (sheet_name == 'FactoryShipment' and excel_col == 'PartNo_ETA_FLTC') or \
-               (sheet_name == 'Productinfo' and excel_col == 'Delta_PartNO'):
-                sql += f"[{db_col}] {db_type} PRIMARY KEY,\n"
-            else:
-                sql += f"[{db_col}] {db_type},\n"
-        sql = sql.rstrip(',\n') + "\n);"
-        cursor.execute(sql)
-        logging.info(f"{sheet_name} 表格建立完成")
+        if table_exists == 0:
+            # 表格不存在，創建表格
+            sql = f"""
+            CREATE TABLE {table_name} (
+            """
+            for excel_col, (db_col, db_type) in column_mappings[sheet_name].items():
+                if (sheet_name == 'Customer Code' and excel_col == 'ASP施工店') or \
+                   (sheet_name == 'FactoryShipment' and excel_col == 'PartNo_ETA_FLTC') or \
+                   (sheet_name == 'Productinfo' and excel_col == 'Delta_PartNO') or \
+                   (sheet_name == 'Orderinfo' and excel_col == 'DEJ_Estimate_Number_Product_Name'):
+                    sql += f"[{db_col}] {db_type} PRIMARY KEY,\n"
+                else:
+                    sql += f"[{db_col}] {db_type},\n"
+            sql = sql.rstrip(',\n') + "\n);"
+            cursor.execute(sql)
+            logging.info(f"{sheet_name} 表格建立完成")
+        else:
+            # 表格已存在，清除資料
+            sql = f"DELETE FROM {table_name};"
+            cursor.execute(sql)
+            logging.info(f"{sheet_name} 表格資料已清除")
+
     except Exception as e:
-        logging.error(f"創建表格 {table_name} 失敗: {e}")
+        logging.error(f"處理表格 {table_name} 失敗: {e}")
         raise
+
 
 # 動態生成 INSERT 語句
 def generate_insert_sql(table_name, df, column_mappings, sheet_name):
@@ -59,54 +71,12 @@ def insert_data(cursor, table_name, df, insert_sql):
         try:
             cursor.execute(insert_sql, tuple(row))
         except pyodbc.IntegrityError:
-            logging.warning(f"跳過重複主鍵值: {row[0]}")
+            logging.warning(f"跳過重複主鍵值: {row.iloc[0]}")
             continue
         except Exception as e:
             logging.error(f"插入資料時出錯: {e}")
             continue
 
-# 匯出資料至 Excel
-def export_summarytable_to_excel(conn, table_name, output_file):
-    try:
-        query = f"SELECT * FROM {table_name}"
-        df = pd.read_sql(query, conn)
-        
-        # 確保日期列格式正確
-        date_columns = ['order_date', 'actual_shipment_date', 'estimated_shipment_date', 
-                        'delivery_date', 'Desired_delivery_Date', 'standard_delivery_time']
-        
-        for col in date_columns:
-            if col in df.columns:
-                df[col] = pd.to_datetime(df[col], errors='coerce')  # 確保是 datetime 格式
-
-        with pd.ExcelWriter(output_file, engine='xlsxwriter') as writer:
-            df.to_excel(writer, sheet_name=table_name, index=False)
-            workbook = writer.book
-            worksheet = writer.sheets[table_name]
-            
-            # 設定格式：粗框與粗體
-            bold_format = workbook.add_format({'bold': True, 'border': 2})  # 粗體 + 粗框
-            border_format = workbook.add_format({'border': 2})  # 只有粗框
-            date_format = workbook.add_format({'num_format': 'yyyy-mm-dd', 'border': 2})  # 日期格式
-            
-            # 套用格式到表頭
-            for col_num, value in enumerate(df.columns.values):
-                worksheet.write(0, col_num, value, bold_format)
-            
-            # 套用格式到資料列
-            for row_num in range(1, len(df) + 1):  # 從第 1 列開始（跳過表頭）
-                for col_num in range(len(df.columns)):
-                    cell_value = df.iloc[row_num - 1, col_num]
-                    # 檢查是否是日期欄位，如果是則使用日期格式
-                    if isinstance(cell_value, pd.Timestamp):  # 檢查是否為日期類型
-                        worksheet.write(row_num, col_num, cell_value, date_format)
-                    else:
-                        worksheet.write(row_num, col_num, cell_value, border_format)
-
-        logging.info(f"表格 {table_name} 匯出成功至 {output_file}")
-    except Exception as e:
-        logging.error(f"匯出表格 {table_name} 時發生錯誤: {e}")
-        raise
     
 # 主處理函數
 def process_excel_to_sql_and_export(excel_file_path, table_mapping, column_mappings, view_name, output_file):
@@ -118,9 +88,21 @@ def process_excel_to_sql_and_export(excel_file_path, table_mapping, column_mappi
             logging.info(f"處理工作表: {sheet_name}")
             df = pd.read_excel(excel_file_path, sheet_name=sheet_name)
             df.columns = df.columns.str.strip()
-
+             
             if sheet_name == 'FactoryShipment':
+                # 資料處理：確保日期格式正確
+                date_columns = ['PO_Date', 'Actual_Ex_fac_date', 'ETD_SH', 'ETA_FLTC', 'Original_ETA']
+                for col in date_columns:
+                    if col in df.columns:
+                        df[col] = pd.to_datetime(df[col], errors='coerce')  # 確保是 datetime 格式
+                # 資料處理：確保數量格式正確
+                df['Qty'] = pd.to_numeric(df['Qty'], errors='coerce')  # 確保是數字格式
+                # 填補 ETA_YEAR 的空值為 ETA_FLTC 的年份
+                df['ETA_Year'] = df['ETA_Year'].fillna(df['ETA_FLTC'].dt.year.astype(str))
+                # # 去除part.no後面的空值
+                df['Part_No'] = df['Part_No'].astype(str).str.strip()
                 df['PartNo_ETA_FLTC'] = df['Part_No'].astype(str) + df['ETA_FLTC'].astype(str)
+                #將同樣Key的Qty加總一起
                 df = df.groupby('PartNo_ETA_FLTC', as_index=False).agg({
                     'PO_Date': 'first', 'Item': 'first', 'Qty': 'sum', 'PO_NO': 'first',
                     'Part_No': 'first', 'Actual_Ex_fac_date': 'first', 'ETD_SH': 'first',
@@ -128,7 +110,10 @@ def process_excel_to_sql_and_export(excel_file_path, table_mapping, column_mappi
                     'ETA_Year': 'first', 'Status': 'first'
                 })
 
-            create_table(cursor, table_name, column_mappings, sheet_name)
+            if sheet_name == 'Orderinfo':
+                df['DEJ_Estimate_Number_Product_Name'] = df['DEJ見積り番号'].astype(str) + df['品名・規格'].astype(str)
+
+            create_or_clear_table(cursor, table_name, column_mappings, sheet_name)
             insert_sql = generate_insert_sql(table_name, df, column_mappings, sheet_name)
             insert_data(cursor, table_name, df, insert_sql)
 
@@ -137,12 +122,15 @@ def process_excel_to_sql_and_export(excel_file_path, table_mapping, column_mappi
 
         export_summarytable_to_excel(conn, view_name, output_file)
 
+
     except Exception as e:
         logging.error(f"處理過程中出現錯誤: {e}")
         raise
     finally:
-        cursor.close()
-        conn.close()
+        if cursor:
+            cursor.close()
+        if conn:
+            conn.close()
 
 if __name__ == "__main__":
     excel_file_path = r'D:\\DeltaBox\\OneDrive - Delta Electronics, Inc\\deltaproject\\DEJbackup\\SoftbankExcel\\表單\\SoftBankData_DBusing.xlsx'
@@ -169,10 +157,11 @@ if __name__ == "__main__":
             'ETA_FLTC': ('ETA_FLTC', 'DATE'),
             'Original_ETA': ('Original_ETA', 'DATE'),
             'ship_method': ('ship_method', 'NVARCHAR(255)'),
-            'ETA_Year': ('ETA_Year', 'INT'),
+            'ETA_Year': ('ETA_Year', 'NVARCHAR(255)'),
             'Status': ('Status', 'NVARCHAR(255)')
         },
         'Orderinfo': {
+            'DEJ_Estimate_Number_Product_Name': ('DEJ_Estimate_Number_Product_Name', 'NVARCHAR(255)'),
             'DEJ見積り番号': ('DEJ_Estimate_Number', 'NVARCHAR(255)'),
             '注文日': ('Order_Date', 'DATE'),
             '實際出荷日': ('Actual_Shipment_Date', 'DATE'),
