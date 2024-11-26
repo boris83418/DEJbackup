@@ -1,0 +1,102 @@
+2024-11-22 15:31:36,638 - INFO - 成功連線到資料庫: jpdejitdev01/ITQAS2
+2024-11-22 15:31:36,638 - INFO - 處理工作表: Customer Code
+2024-11-22 15:31:44,197 - INFO - Customer Code 表格資料已清除
+2024-11-22 15:31:44,980 - INFO - 處理工作表: FactoryShipment
+2024-11-22 15:31:45,093 - INFO - FactoryShipment 表格資料已清除
+2024-11-25 12:30:15,790 - INFO - 按下按鈕，開始資料庫更新過程...
+2024-11-25 12:30:15,792 - INFO - 開始執行資料庫更新腳本...
+2024-11-25 12:30:18,918 - INFO - 成功連線到資料庫: jpdejitdev01/ITQAS2
+2024-11-25 12:30:18,919 - INFO - 處理工作表: Customer Code
+2024-11-25 12:30:19,757 - INFO - Customer Code 表格資料已清除
+2024-11-25 12:30:19,982 - INFO - 處理工作表: FactoryShipment
+2024-11-25 12:30:20,038 - INFO - FactoryShipment 表格資料已清除
+2024-11-25 12:30:20,644 - INFO - 處理工作表: Orderinfo
+2024-11-25 12:30:20,686 - INFO - Orderinfo 表格資料已清除
+2024-11-25 12:30:21,204 - INFO - 處理工作表: Productinfo
+2024-11-25 12:30:21,243 - INFO - Productinfo 表格資料已清除
+2024-11-25 12:30:21,304 - WARNING - 跳過重複主鍵值: TBM48050E2-1M22
+2024-11-25 12:30:21,433 - WARNING - 跳過重複主鍵值: ESR-48/56C F-A
+2024-11-25 12:30:21,499 - INFO - 所有資料已成功寫入資料庫
+2024-11-25 12:30:21,603 - INFO - 資料庫更新成功！
+2024-11-25 12:30:21,603 - INFO - 寫入資料庫成功！
+2024-11-25 12:31:28,315 - INFO - 按下按鈕，開始資料庫更新過程...
+2024-11-25 12:31:28,318 - INFO - 開始執行資料庫更新腳本...
+2024-11-25 12:31:30,138 - INFO - 成功連線到資料庫: jpdejitdev01/ITQAS2
+2024-11-25 12:31:30,139 - INFO - 處理工作表: Customer Code
+2024-11-25 12:31:30,742 - INFO - Customer Code 表格資料已清除
+2024-11-25 12:31:30,969 - INFO - 處理工作表: FactoryShipment
+2024-11-25 12:31:31,024 - INFO - FactoryShipment 表格資料已清除
+2024-11-25 12:31:31,573 - INFO - 處理工作表: Orderinfo
+2024-11-25 12:31:31,609 - INFO - Orderinfo 表格資料已清除
+2024-11-25 12:31:32,115 - INFO - 處理工作表: Productinfo
+2024-11-25 12:31:32,157 - INFO - Productinfo 表格資料已清除
+2024-11-25 12:31:32,201 - WARNING - 跳過重複主鍵值: TBM48050E2-1M22
+2024-11-25 12:31:32,296 - WARNING - 跳過重複主鍵值: ESR-48/56C F-A
+2024-11-25 12:31:32,337 - INFO - 所有資料已成功寫入資料庫
+2024-11-25 12:31:32,433 - INFO - 資料庫更新成功！
+2024-11-25 12:31:32,433 - INFO - 寫入資料庫成功！
+2024-11-25 17:20:48,132 - INFO - 按下按鈕，開始資料庫更新過程...
+2024-11-25 17:20:48,142 - INFO - 開始執行資料庫更新腳本...
+2024-11-25 17:20:50,416 - INFO - 成功連線到資料庫: jpdejitdev01/ITQAS2
+2024-11-25 17:20:50,416 - INFO - 處理工作表: Customer Code
+2024-11-25 17:20:51,359 - INFO - Customer Code 表格資料已清除
+2024-11-25 17:20:51,569 - INFO - 處理工作表: FactoryShipment
+2024-11-25 17:20:51,619 - INFO - FactoryShipment 表格資料已清除
+2024-11-25 17:20:52,130 - INFO - 處理工作表: Orderinfo
+2024-11-25 17:20:52,164 - INFO - Orderinfo 表格資料已清除
+2024-11-25 17:20:52,678 - INFO - 處理工作表: Productinfo
+2024-11-25 17:20:52,715 - INFO - Productinfo 表格資料已清除
+2024-11-25 17:20:52,758 - WARNING - 跳過重複主鍵值: TBM48050E2-1M22
+2024-11-25 17:20:52,848 - WARNING - 跳過重複主鍵值: ESR-48/56C F-A
+2024-11-25 17:20:52,898 - INFO - 所有資料已成功寫入資料庫
+2024-11-25 17:20:53,014 - INFO - 資料庫更新成功！
+2024-11-25 17:20:54,867 - INFO - 按下按鈕，開始匯出出貨清單...
+2024-11-25 17:20:54,868 - INFO - 開始匯出出貨清單...
+2024-11-25 17:20:55,039 - INFO - 成功連線到資料庫: jpdejitdev01/ITQAS2
+2024-11-25 17:20:56,128 - INFO - 表格 dbo.SoftBankSummaryView 匯出成功至 D:\\DeltaBox\\OneDrive - Delta Electronics, Inc\\deltaproject\\DEJbackup\\SoftbankExcel\\表單\\SoftBankSummaryTable.xlsx
+2024-11-25 17:20:59,930 - INFO - 按下按鈕，開始匯出出貨清單...
+2024-11-25 17:20:59,931 - INFO - 開始匯出出貨清單...
+2024-11-25 17:20:59,934 - INFO - 成功連線到資料庫: jpdejitdev01/ITQAS2
+2024-11-25 17:21:00,140 - INFO - 表格 dbo.SoftBankSummaryView 匯出成功至 D:\\DeltaBox\\OneDrive - Delta Electronics, Inc\\deltaproject\\DEJbackup\\SoftbankExcel\\表單\\SoftBankSummaryTable.xlsx
+2024-11-25 17:21:01,370 - INFO - 按下按鈕，開始匯出出貨清單...
+2024-11-25 17:21:01,370 - INFO - 開始匯出出貨清單...
+2024-11-25 17:21:01,374 - INFO - 成功連線到資料庫: jpdejitdev01/ITQAS2
+2024-11-25 17:21:01,602 - INFO - 表格 dbo.SoftBankSummaryView 匯出成功至 D:\\DeltaBox\\OneDrive - Delta Electronics, Inc\\deltaproject\\DEJbackup\\SoftbankExcel\\表單\\SoftBankSummaryTable.xlsx
+2024-11-25 17:21:05,136 - INFO - 按下按鈕，開始資料庫更新過程...
+2024-11-25 17:21:05,137 - INFO - 開始執行資料庫更新腳本...
+2024-11-25 17:21:07,166 - INFO - 成功連線到資料庫: jpdejitdev01/ITQAS2
+2024-11-25 17:21:07,166 - INFO - 處理工作表: Customer Code
+2024-11-25 17:21:07,846 - INFO - Customer Code 表格資料已清除
+2024-11-25 17:21:08,150 - INFO - 處理工作表: FactoryShipment
+2024-11-25 17:21:08,240 - INFO - FactoryShipment 表格資料已清除
+2024-11-25 17:21:08,891 - INFO - 處理工作表: Orderinfo
+2024-11-25 17:21:08,926 - INFO - Orderinfo 表格資料已清除
+2024-11-25 17:21:09,443 - INFO - 處理工作表: Productinfo
+2024-11-25 17:21:09,480 - INFO - Productinfo 表格資料已清除
+2024-11-25 17:21:09,552 - WARNING - 跳過重複主鍵值: TBM48050E2-1M22
+2024-11-25 17:21:09,677 - WARNING - 跳過重複主鍵值: ESR-48/56C F-A
+2024-11-25 17:21:09,728 - INFO - 所有資料已成功寫入資料庫
+2024-11-25 17:21:09,822 - INFO - 資料庫更新成功！
+2024-11-25 17:21:11,750 - INFO - 按下按鈕，開始匯出出貨清單...
+2024-11-25 17:21:11,752 - INFO - 開始匯出出貨清單...
+2024-11-25 17:21:11,877 - INFO - 成功連線到資料庫: jpdejitdev01/ITQAS2
+2024-11-25 17:21:12,047 - INFO - 表格 dbo.SoftBankSummaryView 匯出成功至 D:\\DeltaBox\\OneDrive - Delta Electronics, Inc\\deltaproject\\DEJbackup\\SoftbankExcel\\表單\\SoftBankSummaryTable.xlsx
+2024-11-25 17:46:23,767 - INFO - 按下按鈕，開始資料庫更新過程...
+2024-11-25 17:46:23,778 - INFO - 開始執行資料庫更新腳本...
+2024-11-25 17:46:27,835 - INFO - 成功連線到資料庫: jpdejitdev01/ITQAS2
+2024-11-25 17:46:27,836 - INFO - 處理工作表: Customer Code
+2024-11-25 17:46:30,561 - INFO - Customer Code 表格資料已清除
+2024-11-25 17:46:30,870 - INFO - 處理工作表: FactoryShipment
+2024-11-25 17:46:30,936 - INFO - FactoryShipment 表格資料已清除
+2024-11-25 17:46:31,702 - INFO - 處理工作表: Orderinfo
+2024-11-25 17:46:31,736 - INFO - Orderinfo 表格資料已清除
+2024-11-25 17:46:32,240 - INFO - 處理工作表: Productinfo
+2024-11-25 17:46:32,275 - INFO - Productinfo 表格資料已清除
+2024-11-25 17:46:32,326 - WARNING - 跳過重複主鍵值: TBM48050E2-1M22
+2024-11-25 17:46:32,432 - WARNING - 跳過重複主鍵值: ESR-48/56C F-A
+2024-11-25 17:46:32,480 - INFO - 所有資料已成功寫入資料庫
+2024-11-25 17:46:32,584 - INFO - 資料庫更新成功！
+2024-11-25 17:46:39,329 - INFO - 按下按鈕，開始匯出出貨清單...
+2024-11-25 17:46:39,330 - INFO - 開始匯出出貨清單...
+2024-11-25 17:46:39,487 - INFO - 成功連線到資料庫: jpdejitdev01/ITQAS2
+2024-11-25 17:46:41,817 - INFO - 表格 dbo.SoftBankSummaryView 匯出成功至 D:\\DeltaBox\\OneDrive - Delta Electronics, Inc\\deltaproject\\DEJbackup\\SoftbankExcel\\表單\\SoftBankSummaryTable.xlsx
