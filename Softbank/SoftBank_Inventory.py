@@ -17,8 +17,33 @@ logging.basicConfig(
     ]
 )
 
+class calculatestock(QThread):
+    
+    finished = pyqtSignal(bool, str)  # 信號：成功與否，訊息
 
-
+    def run(self):
+        """更新SoftBank資料庫"""
+        # 更新腳本路徑
+        SCRIPT_PATH = r"D:\Deltabox\OneDrive - Delta Electronics, Inc\deltaproject\DEJbackup\Softbank\SoftBank_ExceltoDB.py"
+        try:
+            logging.info("開始執行資料庫更新腳本...")
+            result = subprocess.run(
+                ["python", SCRIPT_PATH],
+                # 讓外部腳本輸出訊息在終端機
+                stdout=sys.stdout,
+                # 讓外部腳本錯誤訊息在終端機
+                stderr=sys.stderr,
+                check=True
+            )
+            self.finished.emit(True, "寫入資料庫成功！")
+        except subprocess.CalledProcessError as e:
+            logging.error(f"寫入資料庫失敗: {e.stderr}")
+            self.finished.emit(False, str(e.stderr))
+        except Exception as e:
+            logging.error(f"未知錯誤: {e}")
+            self.finished.emit(False, str(e))
+            
+            
 class UpdateDatabaseThread(QThread):
     finished = pyqtSignal(bool, str)  # 信號：成功與否，訊息
 
