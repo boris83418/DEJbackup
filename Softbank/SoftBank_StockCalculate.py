@@ -1,27 +1,30 @@
 import pandas as pd
 from datetime import datetime, timedelta
-import pyodbc
-
+from sqlalchemy import create_engine
+import sys
 # 連接資料庫
 def connect_to_db():
-    conn = pyodbc.connect(
+    # 使用 SQLAlchemy 創建引擎
+    connection_string = (
+        "mssql+pyodbc:///?odbc_connect="
         "Driver={SQL Server};"
         "Server=jpdejitdev01;"
         "Database=ITQAS2;"
         "Trusted_Connection=yes;"
     )
-    return conn
+    engine = create_engine(connection_string)
+    return engine
 
 # 提取數據
 def fetch_data():
-    connection = connect_to_db()
+    engine = connect_to_db()
 
     # 進貨數據
     factory_query = """
     SELECT Part_No, eta_FLTC, Qty, Status
     FROM SoftBank_Data_FactoryShipment
     """
-    factory_data = pd.read_sql_query(factory_query, connection)
+    factory_data = pd.read_sql_query(factory_query, engine)
 
     # 出貨數據
     order_query = """
@@ -30,9 +33,8 @@ def fetch_data():
            Quantity
     FROM SoftBank_Data_Orderinfo
     """
-    order_data = pd.read_sql_query(order_query, connection)
+    order_data = pd.read_sql_query(order_query, engine)
 
-    connection.close()
     return factory_data, order_data
 
 # 計算每日庫存
@@ -72,6 +74,11 @@ def export_to_excel(inventory):
     
     # 輸出 Excel
     inventory.to_excel(file_name, index=False)
+    
+    # 確保控制台支持 Unicode
+
+    sys.stdout.reconfigure(encoding='utf-8')
+    
     print(f"每日庫存表已匯出至 {file_name}")
 
 # 主函數

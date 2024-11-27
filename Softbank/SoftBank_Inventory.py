@@ -17,33 +17,30 @@ logging.basicConfig(
     ]
 )
 
-class calculatestock(QThread):
-    
+class CalculateStockThread(QThread):
     finished = pyqtSignal(bool, str)  # 信號：成功與否，訊息
 
     def run(self):
-        """更新SoftBank資料庫"""
-        # 更新腳本路徑
-        SCRIPT_PATH = r"D:\Deltabox\OneDrive - Delta Electronics, Inc\deltaproject\DEJbackup\Softbank\SoftBank_ExceltoDB.py"
+        """執行庫存計算腳本"""
+        script_path = r"D:/Deltabox/OneDrive - Delta Electronics, Inc/deltaproject/DEJbackup/Softbank/SoftBank_StockCalculate.py"
         try:
-            logging.info("開始執行資料庫更新腳本...")
+            logging.info("開始執行庫存計算腳本...")
             result = subprocess.run(
-                ["python", SCRIPT_PATH],
-                # 讓外部腳本輸出訊息在終端機
-                stdout=sys.stdout,
-                # 讓外部腳本錯誤訊息在終端機
-                stderr=sys.stderr,
-                check=True
+                ["python", script_path],
+                stdout=subprocess.PIPE,
+                stderr=subprocess.PIPE,
+                text=True,
+                creationflags=subprocess.CREATE_NO_WINDOW  # 隱藏終端窗口
             )
-            self.finished.emit(True, "寫入資料庫成功！")
-        except subprocess.CalledProcessError as e:
-            logging.error(f"寫入資料庫失敗: {e.stderr}")
-            self.finished.emit(False, str(e.stderr))
+            if result.returncode == 0:
+                self.finished.emit(True, "庫存計算成功！")
+            else:
+                logging.error(f"庫存計算失敗: {result.stderr}")
+                self.finished.emit(False, result.stderr)
         except Exception as e:
-            logging.error(f"未知錯誤: {e}")
+            logging.error(f"執行庫存計算腳本時發生錯誤: {e}")
             self.finished.emit(False, str(e))
-            
-            
+
 class UpdateDatabaseThread(QThread):
     finished = pyqtSignal(bool, str)  # 信號：成功與否，訊息
 
@@ -97,6 +94,7 @@ class Main(QMainWindow, Ui_MainWindow):
         self.bind_events()
         self.update_database_thread = None
         self.export_thread = None
+        self.calculate_stock_thread = None  # 新增庫存計算執行緒
         # 設定背景圖片
         self.set_background_image()
 
@@ -113,6 +111,7 @@ class Main(QMainWindow, Ui_MainWindow):
         """綁定按鈕事件"""
         self.pushButton.clicked.connect(self.start_database_update_thread)
         self.pushButton_2.clicked.connect(self.start_export_thread)
+        self.pushButton_7.clicked.connect(self.start_calculatestock)
 
     def start_database_update_thread(self):
         """啟動資料庫更新執行緒"""
@@ -168,6 +167,32 @@ class Main(QMainWindow, Ui_MainWindow):
 
         self.pushButton_2.setEnabled(True)
         self.export_thread = None
+
+    def start_calculatestock(self):
+        """啟動庫存計算執行緒"""
+        logging.info("按下按鈕，開始計算庫存...")
+        self.pushButton_7.setEnabled(False)
+
+        for button in self.findChildren(QPushButton):
+            if button != self.pushButton_7:
+                button.setEnabled(False)
+
+        self.calculate_stock_thread = CalculateStockThread()
+        self.calculate_stock_thread.finished.connect(self.handle_calculatestock_result)
+        self.calculate_stock_thread.start()
+
+    def handle_calculatestock_result(self, success, message):
+        """處理庫存計算執行緒的結果"""
+        if success:
+            QMessageBox.information(self, "成功", message)
+        else:
+            QMessageBox.critical(self, "錯誤", message)
+
+        self.pushButton_7.setEnabled(True)
+        for button in self.findChildren(QPushButton):
+            if button != self.pushButton_7:
+                button.setEnabled(True)
+        self.calculate_stock_thread = None
 
 
 if __name__ == "__main__":

@@ -5907,3 +5907,50 @@
 2024-11-26 13:59:10,689 - WARNING - 跳過重複主鍵值: ESR-48/56C F-A
 2024-11-26 13:59:10,755 - INFO - 所有資料已成功寫入資料庫
 2024-11-26 13:59:10,923 - INFO - 資料庫更新成功！
+2024-11-27 12:06:44,096 - INFO - 按下按鈕，開始計算庫存...
+2024-11-27 12:06:44,098 - INFO - 開始執行庫存計算腳本...
+2024-11-27 12:06:47,978 - ERROR - 庫存計算失敗: D:\Deltabox\OneDrive - Delta Electronics, Inc\deltaproject\DEJbackup\Softbank\SoftBank_StockCalculate.py:24: UserWarning: pandas only supports SQLAlchemy connectable (engine/connection) or database string URI or sqlite3 DBAPI2 connection. Other DBAPI2 objects are not tested. Please consider using SQLAlchemy.
+  factory_data = pd.read_sql_query(factory_query, connection)
+D:\Deltabox\OneDrive - Delta Electronics, Inc\deltaproject\DEJbackup\Softbank\SoftBank_StockCalculate.py:33: UserWarning: pandas only supports SQLAlchemy connectable (engine/connection) or database string URI or sqlite3 DBAPI2 connection. Other DBAPI2 objects are not tested. Please consider using SQLAlchemy.
+  order_data = pd.read_sql_query(order_query, connection)
+Traceback (most recent call last):
+  File "D:\Deltabox\OneDrive - Delta Electronics, Inc\deltaproject\DEJbackup\Softbank\SoftBank_StockCalculate.py", line 86, in <module>
+    export_to_excel(inventory)
+  File "D:\Deltabox\OneDrive - Delta Electronics, Inc\deltaproject\DEJbackup\Softbank\SoftBank_StockCalculate.py", line 75, in export_to_excel
+    print(f"\u6bcf日庫存表已匯出至 {file_name}")
+UnicodeEncodeError: 'cp932' codec can't encode character '\u6bcf' in position 0: illegal multibyte sequence
+
+2024-11-27 12:11:40,024 - INFO - 按下按鈕，開始計算庫存...
+2024-11-27 12:11:40,025 - INFO - 開始執行庫存計算腳本...
+2024-11-27 12:11:43,471 - ERROR - 庫存計算失敗: Traceback (most recent call last):
+  File "D:\Deltabox\OneDrive - Delta Electronics, Inc\deltaproject\DEJbackup\Softbank\SoftBank_StockCalculate.py", line 88, in <module>
+    export_to_excel(inventory)
+  File "D:\Deltabox\OneDrive - Delta Electronics, Inc\deltaproject\DEJbackup\Softbank\SoftBank_StockCalculate.py", line 77, in export_to_excel
+    print(f"\u6bcf日庫存表已匯出至 {file_name}")
+UnicodeEncodeError: 'cp932' codec can't encode character '\u6bcf' in position 0: illegal multibyte sequence
+
+2024-11-27 12:14:31,619 - INFO - 按下按鈕，開始計算庫存...
+2024-11-27 12:14:31,621 - INFO - 開始執行庫存計算腳本...
+2024-11-27 12:20:48,924 - INFO - 按下按鈕，開始資料庫更新過程...
+2024-11-27 12:20:48,938 - INFO - 開始執行資料庫更新腳本...
+2024-11-27 12:20:51,062 - INFO - 成功連線到資料庫: jpdejitdev01/ITQAS2
+2024-11-27 12:20:51,063 - INFO - 處理工作表: Customer Code
+2024-11-27 12:20:54,373 - INFO - Customer Code 表格資料已清除
+2024-11-27 12:20:54,631 - INFO - 處理工作表: FactoryShipment
+2024-11-27 12:20:54,698 - INFO - FactoryShipment 表格資料已清除
+2024-11-27 12:20:55,335 - INFO - 處理工作表: Orderinfo
+2024-11-27 12:20:55,373 - INFO - Orderinfo 表格資料已清除
+2024-11-27 12:20:55,885 - INFO - 處理工作表: Productinfo
+2024-11-27 12:20:55,928 - INFO - Productinfo 表格資料已清除
+2024-11-27 12:20:55,994 - WARNING - 跳過重複主鍵值: TBM48050E2-1M22
+2024-11-27 12:20:56,140 - WARNING - 跳過重複主鍵值: ESR-48/56C F-A
+2024-11-27 12:20:56,206 - INFO - 所有資料已成功寫入資料庫
+2024-11-27 12:20:56,284 - INFO - 資料庫更新成功！
+2024-11-27 12:21:00,676 - INFO - 按下按鈕，開始計算庫存...
+2024-11-27 12:21:00,677 - INFO - 開始執行庫存計算腳本...
+2024-11-27 12:21:05,522 - INFO - 按下按鈕，開始匯出出貨清單...
+2024-11-27 12:21:05,702 - INFO - 成功連線到資料庫: jpdejitdev01/ITQAS2
+2024-11-27 12:21:05,703 - INFO - 開始匯出出貨清單...
+2024-11-27 12:21:06,716 - INFO - 表格 dbo.SoftBankSummaryView 匯出成功至 D:\\DeltaBox\\OneDrive - Delta Electronics, Inc\\deltaproject\\DEJbackup\\SoftbankExcel\\表單\\SoftBankSummaryTable.xlsx
+2024-11-27 17:30:01,125 - INFO - 按下按鈕，開始計算庫存...
+2024-11-27 17:30:01,135 - INFO - 開始執行庫存計算腳本...
