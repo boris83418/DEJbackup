@@ -29,14 +29,21 @@ def export_summarytable_to_excel(conn, table_name, output_file):
         # 用 SQL 查詢資料
         query = f"SELECT * FROM {table_name}"
         df = pd.read_sql(query, conn)
-        
-        # 確保日期列格式正確
-        date_columns = ['order_date', 'actual_shipment_date', 'estimated_shipment_date', 
-                        'delivery_date', 'Desired_delivery_Date', 'standard_delivery_time']
-        
+
+        # 指定需要轉換為時間格式的欄位
+        date_columns = [
+            'order_date',
+            'actual_shipment_date',
+            'estimated_shipment_date',
+            'delivery_date',
+            'Desired_delivery_Date',
+            'standard_delivery_time'
+        ]
+
+        # 將指定欄位轉換為時間格式（若非空值）
         for col in date_columns:
-            if col in df.columns:
-                df[col] = pd.to_datetime(df[col], errors='coerce')  # 確保是 datetime 格式
+            if col in df.columns:  # 確保欄位存在於 DataFrame
+                df[col] = pd.to_datetime(df[col], errors='coerce')  # 將資料轉換為日期格式，無法轉換的設為 NaT
 
         # 匯出到 Excel
         with pd.ExcelWriter(output_file, engine='xlsxwriter') as writer:
@@ -57,11 +64,16 @@ def export_summarytable_to_excel(conn, table_name, output_file):
             for row_num in range(1, len(df) + 1):  # 從第 1 列開始（跳過表頭）
                 for col_num in range(len(df.columns)):
                     cell_value = df.iloc[row_num - 1, col_num]
-                    # 檢查是否是日期欄位，如果是則使用日期格式
-                    if isinstance(cell_value, pd.Timestamp):  # 檢查是否為日期類型
-                        worksheet.write(row_num, col_num, cell_value, date_format)
+                    # 檢查是否為日期欄位且避免 NaT
+                    if df.columns[col_num] in date_columns:
+                        if pd.isna(cell_value):  # 當為 NaT 時不處理日期
+                            worksheet.write(row_num, col_num, '', border_format)  # 留空
+                        elif isinstance(cell_value, pd.Timestamp):  # 確保是時間類型
+                            worksheet.write(row_num, col_num, cell_value, date_format)  # 使用日期格式
+                        else:
+                            worksheet.write(row_num, col_num, '', border_format)  # 若非日期則寫空白
                     else:
-                        worksheet.write(row_num, col_num, cell_value, border_format)
+                        worksheet.write(row_num, col_num, cell_value, border_format)  # 使用一般格式
 
         logging.info(f"表格 {table_name} 匯出成功至 {output_file}")
     except Exception as e:

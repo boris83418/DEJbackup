@@ -63,14 +63,18 @@ def generate_insert_sql(table_name, df, column_mappings, sheet_name):
 
 # 插入資料
 def insert_data(cursor, table_name, df, insert_sql):
-    for _, row in df.iterrows():
+    for index, row in df.iterrows():
+        row = row.apply(lambda x: None if pd.isna(x) else x)  # 將 NaN 轉換為 None
         try:
+            if table_name == 'dbo.SoftBank_Data_Orderinfo':
+                logging.info(f"成功插入資料: {row.to_dict()}")
             cursor.execute(insert_sql, tuple(row))
+
         except pyodbc.IntegrityError:
             logging.warning(f"跳過重複主鍵值: {row.iloc[0]}")
             continue
         except Exception as e:
-            logging.error(f"插入資料時出錯: {e}")
+            logging.error(f"插入資料時出錯 (行 {index}): {e} - 資料: {row.to_dict()}")
             continue
 
     
@@ -107,8 +111,10 @@ def process_excel_to_sql(excel_file_path, table_mapping, column_mappings):
                 })
 
             if sheet_name == 'Orderinfo':
-                df['DEJ_Estimate_Number_Product_Name'] = df['DEJ見積り番号'].astype(str) + df['品名・規格'].astype(str)
-
+                
+                df['DEJ_Estimate_Number_Product_Name'] = df['DEJ見積り番号'].astype(str) + df['品名・規格'].astype(str)+ df['工事名/局名'].astype(str)+ df['台数'].astype(str)
+                
+            
             create_or_clear_table(cursor, table_name, column_mappings, sheet_name)
             insert_sql = generate_insert_sql(table_name, df, column_mappings, sheet_name)
             insert_data(cursor, table_name, df, insert_sql)
@@ -126,7 +132,7 @@ def process_excel_to_sql(excel_file_path, table_mapping, column_mappings):
             conn.close()
 
 if __name__ == "__main__":
-    excel_file_path = r'D:\\DeltaBox\\OneDrive - Delta Electronics, Inc\\deltaproject\\DEJbackup\\SoftbankExcel\\表單\\SoftBankData_DBusing.xlsx'
+    excel_file_path = r'D:\\DeltaBox\\OneDrive - Delta Electronics, Inc\\deltaproject\\DEJbackup\\SoftbankExcel\\表單\\SoftBankData_DBusing_test.xlsx'
     table_mapping = {
         'Customer Code': 'dbo.SoftBank_Data_CustomerCode',
         'FactoryShipment': 'dbo.SoftBank_Data_FactoryShipment',
@@ -155,8 +161,10 @@ if __name__ == "__main__":
         },
         'Orderinfo': {
             'DEJ_Estimate_Number_Product_Name': ('DEJ_Estimate_Number_Product_Name', 'NVARCHAR(255)'),
-            'DEJ見積り番号': ('DEJ_Estimate_Number', 'NVARCHAR(255)'),
+            '見積書回答状況':('Quotation_reply_status','NVARCHAR(255)'),
             '注文日': ('Order_Date', 'DATE'),
+            'DEJ見積り番号': ('DEJ_Estimate_Number', 'NVARCHAR(255)'),
+            '注文書': ('Quotation_status', 'NVARCHAR(255)'),
             '實際出荷日': ('Actual_Shipment_Date', 'DATE'),
             '預計出荷日': ('Estimated_Shipment_Date', 'DATE'),
             '納品日': ('Delivery_Date', 'DATE'),
@@ -167,7 +175,6 @@ if __name__ == "__main__":
             '発注先': ('OrdererLocation', 'NVARCHAR(255)'),
             '担当者': ('Person_in_Charge', 'NVARCHAR(255)'),
             '送り先': ('Recipient', 'NVARCHAR(255)'),
-            '部署名': ('Contact_Department_Name', 'NVARCHAR(255)'),
             '連絡人': ('Contact_Person', 'NVARCHAR(255)'),
             '住所': ('Contact_Address', 'NVARCHAR(255)'),
             '電話': ('ContactPhone', 'NVARCHAR(255)'),
@@ -182,7 +189,8 @@ if __name__ == "__main__":
             'Customer_Model_Name': ('Customer_Model_Name', 'NVARCHAR(255)'),
             'Model': ('Model', 'NVARCHAR(255)'),
             '税抜単価': ('UnitPrice', 'INT'),
-            '標準納期': ('Standard_Delivery_Time', 'INT')
+            '標準納期': ('Standard_Delivery_Time', 'INT'),
+            '月末SAP庫存': ('Month-End_SAP_Inventory', 'INT')
         }
     }
 
