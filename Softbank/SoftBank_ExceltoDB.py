@@ -35,10 +35,11 @@ def create_or_clear_table(cursor, table_name, column_mappings, sheet_name):
             CREATE TABLE {table_name} (
             """
             for excel_col, (db_col, db_type) in column_mappings[sheet_name].items():
-                if (sheet_name == 'Customer Code' and excel_col == 'ASP施工店') or \
+                if sheet_name == 'Orderinfo' and excel_col == 'OrderinfoNumber':
+                    sql += f"OrderinfoNumber INT IDENTITY(1,1) PRIMARY KEY,\n"  # 自動增量主鍵
+                elif (sheet_name == 'Customer Code' and excel_col == 'ASP施工店') or \
                    (sheet_name == 'FactoryShipment' and excel_col == 'PartNo_ETA_FLTC') or \
-                   (sheet_name == 'Productinfo' and excel_col == 'Delta_PartNO') or \
-                   (sheet_name == 'Orderinfo' and excel_col == 'DEJ_Estimate_Number_Product_Name'):
+                   (sheet_name == 'Productinfo' and excel_col == 'Delta_PartNO'):
                     sql += f"[{db_col}] {db_type} PRIMARY KEY,\n"
                 else:
                     sql += f"[{db_col}] {db_type},\n"
@@ -110,11 +111,6 @@ def process_excel_to_sql(excel_file_path, table_mapping, column_mappings):
                     'ETA_Year': 'first', 'Status': 'first'
                 })
 
-            if sheet_name == 'Orderinfo':
-                
-                df['DEJ_Estimate_Number_Product_Name'] = df['DEJ見積り番号'].astype(str) + df['品名・規格'].astype(str)+ df['工事名/局名'].astype(str)+ df['台数'].astype(str)
-                
-            
             create_or_clear_table(cursor, table_name, column_mappings, sheet_name)
             insert_sql = generate_insert_sql(table_name, df, column_mappings, sheet_name)
             insert_data(cursor, table_name, df, insert_sql)
@@ -160,7 +156,7 @@ if __name__ == "__main__":
             'Status': ('Status', 'NVARCHAR(255)')
         },
         'Orderinfo': {
-            'DEJ_Estimate_Number_Product_Name': ('DEJ_Estimate_Number_Product_Name', 'NVARCHAR(255)'),
+            'OrderinfoNumber': ('OrderinfoNumber', 'INT IDENTITY(1,1) PRIMARY KEY'),
             '見積書回答状況':('Quotation_reply_status','NVARCHAR(255)'),
             '注文日': ('Order_Date', 'DATE'),
             'DEJ見積り番号': ('DEJ_Estimate_Number', 'NVARCHAR(255)'),
