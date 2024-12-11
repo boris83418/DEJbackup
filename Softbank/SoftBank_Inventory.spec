@@ -5,7 +5,7 @@ a = Analysis(
     ['SoftBank_Inventory.py'],
     pathex=[],
     binaries=[],
-    datas=[],
+    datas=[('SoftBank_StockCalculate.py', '.'), ('SoftBank_ExceltoDB_Select.py', '.'), ('SoftBank_SummaryTable_Export.py', '.'), ('softbankapp.py', '.'), ('D:/DeltaBox/OneDrive - Delta Electronics, Inc/deltaproject/DEJbackup/Softbank/Pic/delta2.jpg', 'Pic/')],
     hiddenimports=[],
     hookspath=[],
     hooksconfig={},

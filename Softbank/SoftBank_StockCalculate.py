@@ -2,6 +2,8 @@ import pandas as pd
 from datetime import datetime, timedelta
 from sqlalchemy import create_engine
 import sys
+import os
+
 # 連接資料庫
 def connect_to_db():
     # 使用 SQLAlchemy 創建引擎
@@ -32,7 +34,7 @@ def fetch_data():
 
     # 出貨數據
     order_query = """
-    SELECT Product_Name, 
+    SELECT Product_Name,
            COALESCE(Actual_shipment_Date, Estimated_Shipment_Date) AS Shipment_Date, 
            Quantity,
            Quotation_status
@@ -109,6 +111,8 @@ def calculate_inventory(factory_data, order_data, product_data):
 
 
 # 將結果輸出到 Excel
+import os  # 新增 os 模組以處理路徑
+
 def export_to_excel(inventory):
     """ 
     將計算後的庫存導出到 Excel，並在導出前合併等同的 Part_No
@@ -135,15 +139,20 @@ def export_to_excel(inventory):
     
     # **生成檔案名稱，包含日期和時間**
     timestamp = datetime.now().strftime("%Y-%m-%d_%H-%M")
-    file_name = f"daily_inventory_simulate_{timestamp}.xlsx"
+    file_name = f"Daily_Inventory_Simulate_{timestamp}.xlsx"
+    
+    # **指定存儲的網路目錄**
+    save_path = r"\\jpdejstcfs01\\STC_share\\JP IT\\STC SBK 仕分けリスト\\IT system\\Report"
+    full_path = os.path.join(save_path, file_name)
     
     # **輸出 Excel**
-    inventory_transposed.to_excel(file_name, index=True)
+    inventory_transposed.to_excel(full_path, index=True)
     
     # **確保控制台支持 Unicode**
     sys.stdout.reconfigure(encoding='utf-8')
     
-    print(f"每日庫存表已匯出至 {file_name}")
+    print(f"每日庫存表已匯出至 {full_path}")
+
     
 # 主函數
 if __name__ == "__main__":

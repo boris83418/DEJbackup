@@ -1,5 +1,6 @@
 import sys
 import logging
+import os
 from PyQt5.QtWidgets import QApplication, QMainWindow, QMessageBox, QPushButton
 from PyQt5.QtGui import QPixmap, QBrush, QColor
 from PyQt5.QtCore import QThread, pyqtSignal
@@ -22,7 +23,13 @@ class CalculateStockThread(QThread):
 
     def run(self):
         """執行庫存計算腳本"""
-        script_path = r"D:/Deltabox/OneDrive - Delta Electronics, Inc/deltaproject/DEJbackup/Softbank/SoftBank_StockCalculate.py"
+        # script_path = r"D:/Deltabox/OneDrive - Delta Electronics, Inc/deltaproject/DEJbackup/Softbank/SoftBank_StockCalculate.py"
+        if getattr(sys, 'frozen', False):
+        # 如果是從打包的應用程式執行
+            script_path = os.path.join(sys._MEIPASS, "SoftBank_StockCalculate.py")
+        else:
+            # 開發環境下的路徑
+            script_path = "SoftBank_StockCalculate.py"
         try:
             logging.info("開始執行庫存計算腳本...")
             result = subprocess.run(
@@ -47,7 +54,13 @@ class UpdateDatabaseThread(QThread):
     def run(self):
         """更新SoftBank資料庫"""
         # 更新腳本路徑
-        SCRIPT_PATH = r"D:\Deltabox\OneDrive - Delta Electronics, Inc\deltaproject\DEJbackup\Softbank\SoftBank_ExceltoDB.py"
+        if getattr(sys, 'frozen', False):
+            # 如果是從打包的應用程式執行
+            SCRIPT_PATH = os.path.join(sys._MEIPASS, "SoftBank_ExceltoDB_Select.py")
+        else:
+            # 開發環境下的路徑
+            SCRIPT_PATH = "SoftBank_ExceltoDB_Select.py"
+        # SCRIPT_PATH = r"D:\Deltabox\OneDrive - Delta Electronics, Inc\deltaproject\DEJbackup\Softbank\SoftBank_ExceltoDB_Select.py"
         try:
             logging.info("開始執行資料庫更新腳本...")
             result = subprocess.run(
@@ -70,17 +83,17 @@ class UpdateDatabaseThread(QThread):
 class ExportThread(QThread):
     finished = pyqtSignal(bool, str)  # 信號：成功與否，訊息
 
-    def __init__(self, conn, parent=None):
+    def __init__(self, conn, output_dir, parent=None):
         super().__init__(parent)
         self.conn = conn
+        self.output_dir = output_dir  # 確保保存 output_dir
 
     def run(self):
         """執行匯出操作"""
         try:
             logging.info("開始匯出出貨清單...")
-            output_excel_path = r"D:\\DeltaBox\\OneDrive - Delta Electronics, Inc\\deltaproject\\DEJbackup\\SoftbankExcel\\表單\\SoftBankSummaryTable.xlsx"
             table_name = "dbo.SoftBankSummaryView"
-            export_summarytable_to_excel(self.conn, table_name, output_excel_path)  # 呼叫匯出函數
+            export_summarytable_to_excel(self.conn, table_name, self.output_dir)  # 呼叫匯出函數
             self.finished.emit(True, "出貨清單匯出成功！")
         except Exception as e:
             logging.error(f"匯出失敗: {e}")
@@ -100,7 +113,13 @@ class Main(QMainWindow, Ui_MainWindow):
 
     def set_background_image(self):
         """設定背景圖片"""
-        pixmap = QPixmap("D:/DeltaBox/OneDrive - Delta Electronics, Inc/deltaproject/DEJbackup/Softbank/Pic/delta2.jpg")
+        # pixmap = QPixmap("D:/DeltaBox/OneDrive - Delta Electronics, Inc/deltaproject/DEJbackup/Softbank/Pic/delta2.jpg")
+        if getattr(sys, 'frozen', False):  # 检查是否为冻结的环境（如PyInstaller打包后的应用）
+            pixmap = QPixmap(os.path.join(sys._MEIPASS, "Pic", "delta2.jpg"))
+        else:
+            # 開發環境下的路徑
+            pixmap = QPixmap("D:/DeltaBox/OneDrive - Delta Electronics, Inc/deltaproject/DEJbackup/Softbank/Pic/delta2.jpg")
+
         # 設定視窗背景
         self.setAutoFillBackground(True)
         p = self.palette()
@@ -117,7 +136,7 @@ class Main(QMainWindow, Ui_MainWindow):
         """啟動資料庫更新執行緒"""
         logging.info("按下按鈕，開始資料庫更新過程...")
         self.pushButton.setEnabled(False)
-
+        
         for button in self.findChildren(QPushButton):
             if button != self.pushButton:
                 button.setEnabled(False)
@@ -153,8 +172,11 @@ class Main(QMainWindow, Ui_MainWindow):
             QMessageBox.critical(self, "錯誤", f"無法連接資料庫: {e}")
             self.pushButton_2.setEnabled(True)
             return
-        
-        self.export_thread = ExportThread(conn)
+
+        # 設定輸出資料夾
+        output_dir = r"\\jpdejstcfs01\\STC_share\\JP IT\\STC SBK 仕分けリスト\\IT system\\Report"
+        # 傳遞 conn 和 output_dir 給 ExportThread
+        self.export_thread = ExportThread(conn, output_dir)
         self.export_thread.finished.connect(self.handle_export_result)
         self.export_thread.start()
 

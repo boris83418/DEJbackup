@@ -128,7 +128,7 @@ def process_excel_to_sql(excel_file_path, table_mapping, column_mappings):
             conn.close()
 
 if __name__ == "__main__":
-    excel_file_path = r'D:\\DeltaBox\\OneDrive - Delta Electronics, Inc\\deltaproject\\DEJbackup\\SoftbankExcel\\表單\\SoftBankData_DBusing_test.xlsx'
+    excel_file_path = r'\\jpdejstcfs01\\STC_share\\JP IT\STC SBK 仕分けリスト\\IT system\\SoftBankData_DBusing_test.xlsx'
     table_mapping = {
         'Customer Code': 'dbo.SoftBank_Data_CustomerCode',
         'FactoryShipment': 'dbo.SoftBank_Data_FactoryShipment',

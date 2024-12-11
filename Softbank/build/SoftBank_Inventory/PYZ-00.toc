@@ -1,5 +1,5 @@
-('D:\\Deltabox\\OneDrive - Delta Electronics, '
- 'Inc\\deltaproject\\DEJbackup\\softbank\\build\\SoftBank_Inventory\\PYZ-00.pyz',
+('D:\\DeltaBox\\OneDrive - Delta Electronics, '
+ 'Inc\\deltaproject\\DEJbackup\\Softbank\\build\\SoftBank_Inventory\\PYZ-00.pyz',
  [('PIL',
    'C:\\Users\\boris.wang\\AppData\\Local\\Programs\\Python\\Python312\\Lib\\site-packages\\PIL\\__init__.py',
    'PYMODULE'),
@@ -232,8 +232,8 @@
    'C:\\Users\\boris.wang\\AppData\\Local\\Programs\\Python\\Python312\\Lib\\site-packages\\PyQt5\\__init__.py',
    'PYMODULE'),
   ('SoftBank_SummaryTable_Export',
-   'D:\\Deltabox\\OneDrive - Delta Electronics, '
-   'Inc\\deltaproject\\DEJbackup\\softbank\\SoftBank_SummaryTable_Export.py',
+   'D:\\DeltaBox\\OneDrive - Delta Electronics, '
+   'Inc\\deltaproject\\DEJbackup\\Softbank\\SoftBank_SummaryTable_Export.py',
    'PYMODULE'),
   ('__future__',
    'C:\\Users\\boris.wang\\AppData\\Local\\Programs\\Python\\Python312\\Lib\\__future__.py',
@@ -4104,8 +4104,8 @@
    'C:\\Users\\boris.wang\\AppData\\Local\\Programs\\Python\\Python312\\Lib\\socketserver.py',
    'PYMODULE'),
   ('softbankapp',
-   'D:\\Deltabox\\OneDrive - Delta Electronics, '
-   'Inc\\deltaproject\\DEJbackup\\softbank\\softbankapp.py',
+   'D:\\DeltaBox\\OneDrive - Delta Electronics, '
+   'Inc\\deltaproject\\DEJbackup\\Softbank\\softbankapp.py',
    'PYMODULE'),
   ('soupsieve',
    'C:\\Users\\boris.wang\\AppData\\Local\\Programs\\Python\\Python312\\Lib\\site-packages\\soupsieve\\__init__.py',

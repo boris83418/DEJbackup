@@ -1,6 +1,8 @@
 import pandas as pd
 import logging
 import pyodbc
+from datetime import datetime
+import os
 
 # 設定日誌紀錄
 logging.basicConfig(
@@ -24,8 +26,13 @@ def connect_to_database(server, database):
         logging.error(f"資料庫連線失敗: {e}")
         raise
 
-def export_summarytable_to_excel(conn, table_name, output_file):
+def export_summarytable_to_excel(conn, table_name, output_dir):
     try:
+        # **生成檔案名稱，包含日期和時間**
+        timestamp = datetime.now().strftime("%Y-%m-%d_%H-%M")
+        file_name = f"SoftBankSummaryTable_{timestamp}.xlsx"
+        output_file = os.path.join(output_dir, file_name)  # 動態生成檔案名稱
+        
         # 用 SQL 查詢資料
         query = f"SELECT * FROM {table_name}"
         df = pd.read_sql(query, conn)
@@ -87,9 +94,9 @@ if __name__ == "__main__":
         conn = connect_to_database('jpdejitdev01', 'ITQAS2')
 
         # 匯出表格到 Excel
-        output_excel_path = r"D:\\DeltaBox\\OneDrive - Delta Electronics, Inc\\deltaproject\\DEJbackup\\SoftbankExcel\\表單\\SoftBankSummaryTable.xlsx"
+        output_dir = r"\\jpdejstcfs01\STC_share\\JP IT\\STC SBK 仕分けリスト\\IT system\\Report"
         table_name = "dbo.SoftBankSummaryView"  # 要匯出的View
-        export_summarytable_to_excel(conn, table_name, output_excel_path)
+        export_summarytable_to_excel(conn, table_name, output_dir)
 
     except Exception as e:
         logging.error(f"整體程式執行失敗: {e}")
